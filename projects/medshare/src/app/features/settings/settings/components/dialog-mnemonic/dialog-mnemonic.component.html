@@ -1,0 +1,19 @@
+<h1 mat-dialog-title>Wallet Mnemonic</h1>
+<div mat-dialog-content>
+    <p>This is your Mnemonic 12-Word Seed Phrase.</p>
+    <p>Keep it in a Safe Place!</p>
+    <mat-form-field>
+        <mat-label>Reveal your Seed Phrase?</mat-label>
+        <!-- <input matInput [(ngModel)]="data.animal"> -->
+        <button mat-button color="primary" (click)="onRevealMnemonicClick()">Reveal</button>
+        <mat-chip-list>
+            <mat-chip *ngFor="let word of mnemonic; let i = index" color="primary" selected>
+                {{ i + 1 }} - {{ word }}
+            </mat-chip>
+        </mat-chip-list>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">No Thanks</button>
+    <button mat-button cdkFocusInitial>Ok</button>
+</div>

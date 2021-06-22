@@ -1,0 +1,140 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 rtl class="main-heading">{{ 'mds.examples.stocks.title' | translate }}</h1>
+    </div>
+  </div>
+  <div class="row" [ngClass]="routeAnimationsElements" rtl>
+    <ng-container *ngIf="stocks$ | async as stocks">
+      <div class="row">
+
+
+        <div class="col-md-6 col-lg-3">
+          <form autocomplete="false">
+            <mat-form-field>
+              <input matInput [placeholder]="'mds.examples.stocks.symbol' | translate" [value]="stocks.symbol"
+                (keyup)="onSymbolChange($event.target.value)">
+            </mat-form-field>
+          </form>
+          <p>
+            {{ 'mds.examples.stocks.description' | translate }} GOOGL, FB, AAPL, NVDA, AMZN,
+            TWTR, SNAP, TSLA...
+          </p>
+          <br>
+        </div>
+        <div class="col-md-6 col-lg-4 offset-lg-1">
+          <mat-spinner *ngIf="stocks.loading"></mat-spinner>
+          <mat-card *ngIf="stocks.stock">
+            <mat-card-title>{{stocks.stock.symbol}} <span>{{stocks.stock.last}} {{stocks.stock.ccy}}</span>
+            </mat-card-title>
+            <mat-card-subtitle>
+              <p [ngClass]="{ negative: stocks.stock.changeNegative }">
+                <fa-icon icon="caret-up" *ngIf="stocks.stock.changePositive"></fa-icon>
+                <fa-icon icon="caret-down" *ngIf="stocks.stock.changeNegative"></fa-icon>
+                {{stocks.stock.change}} ({{stocks.stock.changePercent}}%)
+              </p>
+            </mat-card-subtitle>
+            <mat-card-content>{{stocks.stock.exchange}}</mat-card-content>
+          </mat-card>
+          <p *ngIf="stocks.error" class="error-state">
+            <fa-icon icon="exclamation-triangle" size="3x"></fa-icon>
+            <br><br>
+            <span>
+              {{ 'mds.examples.stocks.error1' | translate }}
+              <span class="symbol">{{stocks.symbol}}</span>
+              {{ 'mds.examples.stocks.error2' | translate }}
+            </span>
+          </p>
+          <br>
+          <br>
+        </div>
+
+      </div>
+      <div class="row">
+
+        <div class="col-md-6 col-lg-3">
+          <p>
+            {{ 'mds.examples.ethereum.gasprice.description' | translate }}
+          </p>
+          <br>
+        </div>
+        <div class="col-md-6 col-lg-4 offset-lg-1">
+          <mat-spinner *ngIf="stocks.loading"></mat-spinner>
+          
+          <mat-card *ngIf="gasPrice">
+            <mat-card-title>GasPrice<span>Fast</span>
+            </mat-card-title>
+            <mat-card-subtitle>
+              <p [ngClass]="{ negative: stocks.stock.changeNegative }">
+                <fa-icon icon="caret-up" *ngIf="stocks.stock.changePositive"></fa-icon>
+                <fa-icon icon="caret-down" *ngIf="stocks.stock.changeNegative"></fa-icon>
+                {{gasPrice.fast}}00000000 ({{gasPrice.fastWait}}s)
+              </p>
+            </mat-card-subtitle>
+            <mat-card-content>
+              <table mat-table [dataSource]="gasPrice" class="mat-elevation-z8">
+
+                <!--- Note that these columns can be defined in any order.
+                      The actual rendered columns are set as a property on the row definition" -->
+              
+                <!-- Position Column -->
+                <ng-container matColumnDef="position">
+                  <th mat-header-cell *matHeaderCellDef> No. </th>
+                  <td mat-cell *matCellDef="let element">{{gasPrice.fast}}00000000 </td>
+                </ng-container>
+              
+                <!-- Name Column -->
+                <ng-container matColumnDef="name">
+                  <th mat-header-cell *matHeaderCellDef> Name </th>
+                  <td mat-cell *matCellDef="let element"> {{gasPrice.fastest}}00000000 </td>
+                </ng-container>
+              
+                <!-- Weight Column -->
+                <ng-container matColumnDef="weight">
+                  <th mat-header-cell *matHeaderCellDef> Weight </th>
+                  <td mat-cell *matCellDef="let element"> {{gasPrice.safeLow}}00000000 </td>
+                </ng-container>
+              
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="symbol">
+                  <th mat-header-cell *matHeaderCellDef> Symbol </th>
+                  <td mat-cell *matCellDef="let element"> {{gasPrice.average}}00000000 </td>
+                </ng-container>
+              
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>                        
+
+              <a href="https://docs.ethgasstation.info/"><img src="https://gblobscdn.gitbook.com/spaces%2F-M4Tr40-JkLM9CWyiXAb%2Favatar-1586434471856.png?alt=media" width="40px;" alt=""/><br /><sub><b>GasStation</b></sub></a>
+            </mat-card-content>
+          </mat-card>
+          <p *ngIf="stocks.error" class="error-state">
+            <fa-icon icon="exclamation-triangle" size="3x"></fa-icon>
+            <br><br>
+            <span>
+              {{ 'mds.examples.stocks.error1' | translate }}
+              <span class="symbol">{{stocks.symbol}}</span>
+              {{ 'mds.examples.stocks.error2' | translate }}
+            </span>
+          </p>
+          <br>
+          <br>
+        </div>
+
+      </div>
+
+    </ng-container>
+    <div class="col-md-12 col-lg-4" [ngClass]="routeAnimationsElements">
+      <p>
+        {{ 'mds.examples.stocks.text1' | translate }} <code>HTTP</code>
+        {{ 'mds.examples.stocks.text2' | translate }} <code>@ngrx/effects</code>
+        {{ 'mds.examples.stocks.text3' | translate }}
+      </p>
+      <p>{{ 'mds.examples.stocks.text4' | translate }}</p>
+      <p>
+        {{ 'mds.examples.stocks.text5' | translate }} <code>.switchMap</code>.
+      </p>
+      <p>{{ 'mds.examples.stocks.text6' | translate }}</p>
+    </div>
+  </div>
+</div>

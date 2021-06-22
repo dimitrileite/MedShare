@@ -1,0 +1,7 @@
+@use '~@angular/material' as mat;
+
+$mds-primary: mat.define-palette(mat.$indigo-palette, 800, 300, 900);
+$mds-accent: mat.define-palette(mat.$light-blue-palette);
+$mds-warn: mat.define-palette(mat.$pink-palette, 600);
+
+$mds-theme: mat.define-light-theme($mds-primary, $mds-accent, $mds-warn);
