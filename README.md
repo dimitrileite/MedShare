@@ -2,14 +2,14 @@
 
 by [@tomastrajan](https://twitter.com/tomastrajan)
 
-<a href="https://www.buymeacoffee.com/tomastrajan" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png" alt="Buy Me A Coffee" height="34" ></a>
+<a href="https://www.buymeacoffee.com/dimitrileite" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png" alt="Buy Me A Coffee" height="34" ></a>
 
-[![license](https://img.shields.io/github/license/tomastrajan/medshare.svg)](https://github.com/tomastrajan/medshare/blob/master/LICENSE) [![All Contributors](https://img.shields.io/badge/all_contributors-37-orange.svg?style=flat-square)](#contributors) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![Build Status](https://travis-ci.org/tomastrajan/medshare.svg?branch=master)](https://travis-ci.org/tomastrajan/medshare)
-[![Codecov](https://img.shields.io/codecov/c/github/tomastrajan/medshare.svg)](https://codecov.io/gh/tomastrajan/medshare)
-[![Twitter Follow](https://img.shields.io/twitter/follow/tomastrajan.svg?style=social&label=Follow)](https://twitter.com/tomastrajan)
+[![license](https://img.shields.io/github/license/dimitrileite/medshare.svg)](https://github.com/dimitrileite/medshare/blob/master/LICENSE) [![All Contributors](https://img.shields.io/badge/all_contributors-37-orange.svg?style=flat-square)](#contributors) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![Build Status](https://travis-ci.org/dimitrileite/medshare.svg?branch=master)](https://travis-ci.org/dimitrileite/medshare)
+[![Codecov](https://img.shields.io/codecov/c/github/dimitrileite/medshare.svg)](https://codecov.io/gh/dimitrileite/medshare)
+[![Twitter Follow](https://img.shields.io/twitter/follow/shalomempire.svg?style=social&label=Follow)](https://twitter.com/shalomempire)
 
-![intro](https://raw.githubusercontent.com/tomastrajan/medshare/master/meta-assets/intro.png)
-![themes](https://raw.githubusercontent.com/tomastrajan/medshare/master/meta-assets/themes.png)
+![intro](https://raw.githubusercontent.com/dimitrileite/medshare/master/meta-assets/intro.png)
+![themes](https://raw.githubusercontent.com/dimitrileite/medshare/master/meta-assets/themes.png)
 
 ## Table of Content
 
