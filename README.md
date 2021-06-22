@@ -1,6 +1,6 @@
-# Angular 12, NgRx and Angular Material Starter
+# MedShare
 
-by [@tomastrajan](https://twitter.com/tomastrajan)
+by [@shalomempire](https://twitter.com/shalomempire)
 
 <a href="https://www.buymeacoffee.com/dimitrileite" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png" alt="Buy Me A Coffee" height="34" ></a>
 
