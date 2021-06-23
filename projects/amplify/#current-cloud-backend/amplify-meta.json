@@ -1,0 +1,15 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-medshareserver-dev-155442-authRole",
+      "UnauthRoleArn": "arn:aws:iam::278533592701:role/amplify-medshareserver-dev-155442-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::278533592701:role/amplify-medshareserver-dev-155442-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-medshareserver-dev-155442-deployment",
+      "UnauthRoleName": "amplify-medshareserver-dev-155442-unauthRole",
+      "StackName": "amplify-medshareserver-dev-155442",
+      "StackId": "arn:aws:cloudformation:us-east-2:278533592701:stack/amplify-medshareserver-dev-155442/7b19ec90-d454-11eb-a9e6-0a3d303aea5e",
+      "AmplifyAppId": "dlmebskeslo98"
+    }
+  }
+}

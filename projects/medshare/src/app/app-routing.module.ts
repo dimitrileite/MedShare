@@ -13,10 +13,10 @@ const routes: Routes = [
       import('./features/about/about.module').then((m) => m.AboutModule)
   },
   {
-    path: 'feature-list',
+    path: 'provider-list',
     loadChildren: () =>
-      import('./features/feature-list/feature-list.module').then(
-        (m) => m.FeatureListModule
+      import('./features/provider-list/provider-list.module').then(
+        (m) => m.ProviderListModule
       )
   },
   {

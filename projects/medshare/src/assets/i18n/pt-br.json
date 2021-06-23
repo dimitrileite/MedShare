@@ -58,7 +58,7 @@
   "mds.settings.themes.night-mode": "Modo noturno automático (de 21:00 até 7:00)",
   "mds.settings.themes.placeholder": "Color Theme",
   "mds.settings.themes.saneago": "Saneago",
-  "mds.settings.themes.sticky-header": "",
+  "mds.settings.themes.sticky-header": "Cabeçalho fixo",
   "mds.settings.themes.title": "Themes",
   "mds.settings.title": "Configurações",
   "mds.settings.wallet.currency.brl": "Real Brasileiro",
@@ -67,6 +67,6 @@
   "mds.settings.wallet.currency.usd": "Dólares Americanos",
   "mds.settings.wallet.placeholder": "Escolha sua moeda padrão",
   "mds.settings.wallet.title": "Carteira",
-  "mds.title.long": "Angular Ngrx Material Início",
-  "mds.title.short": "Angular Starter"
+  "mds.title.long": "MedShare",
+  "mds.title.short": "Sistema de Plano de Saúde baseado em Consórcio e Empoderado pelo Blockchain da Ethereum"
 }

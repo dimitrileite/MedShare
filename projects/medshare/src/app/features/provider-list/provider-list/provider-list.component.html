@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 rtl class="main-heading">{{ 'mds.providers.title' | translate }}</h1>
+    </div>
+  </div>
+  <div class="row align-items-end">
+    <div *ngFor="let provider of providers" class="col-md-6 col-lg-4" [ngClass]="routeAnimationsElements">
+      <mat-card>
+        <mat-card-title>
+          <code *ngIf="provider.version">{{provider.version}}</code>{{provider.name | translate}}
+        </mat-card-title>
+        <mat-card-subtitle rtl>
+          {{ provider.description | translate }}
+        </mat-card-subtitle>
+        <mat-card-actions>
+          <a *ngIf="provider.github" mat-icon-button [href]="provider.github" rel="noopener noreferrer" target="_blank">
+            <fa-icon [icon]="['fab','github']"></fa-icon>
+          </a>
+          <a mat-button [href]="provider.documentation" rel="noopener noreferrer" target="_blank">
+            <fa-icon icon="book"></fa-icon>{{ 'mds.providers.documentation' | translate }}
+          </a>
+          <a *ngIf="provider.medium" mat-button [href]="provider.medium" rel="noopener noreferrer" target="_blank">
+            <fa-icon [icon]="['fab','medium-m']"></fa-icon>{{ 'mds.providers.guide' | translate }}
+          </a>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
