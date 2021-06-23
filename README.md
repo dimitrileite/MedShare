@@ -5,7 +5,7 @@ by [@shalomempire](https://twitter.com/shalomempire)
 <a href="https://www.buymeacoffee.com/dimitrileite" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png" alt="Buy Me A Coffee" height="34" ></a>
 
 [![license](https://img.shields.io/github/license/dimitrileite/medshare.svg)](https://github.com/dimitrileite/medshare/blob/master/LICENSE) [![All Contributors](https://img.shields.io/badge/all_contributors-37-orange.svg?style=flat-square)](#contributors) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![Build Status](https://travis-ci.com/dimitrileite/medshare.svg?branch=master)](https://travis-ci.com/dimitrileite/medshare)
-[![Codecov](https://img.shields.io/codecov/c/github/dimitrileite/medshare.svg)](https://codecov.io/gh/dimitrileite/medshare)
+[![codecov](https://codecov.io/gh/dimitrileite/medshare/branch/master/graph/badge.svg?token=61IGAVLO48)](https://codecov.io/gh/dimitrileite/medshare)
 [![Twitter Follow](https://img.shields.io/twitter/follow/shalomempire.svg?style=social&label=Follow)](https://twitter.com/shalomempire)
 
 ![intro](https://raw.githubusercontent.com/dimitrileite/medshare/master/meta-assets/intro.png)
