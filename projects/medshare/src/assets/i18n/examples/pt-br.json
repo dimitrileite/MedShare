@@ -94,7 +94,7 @@
   "mds.examples.simple-state-management.username": "",
   "mds.examples.simple-state-management.validator.minlength": "",
   "mds.examples.simple-state-management.validator.required": "",
-  "mds.examples.stocks.description": "Por favor forneça um simbolo do mercado de ações válido como:",
+  "mds.examples.stocks.description": "Por favor forneça o símbolo de uma moeda válida como:",
   "mds.examples.stocks.error1": "Item",
   "mds.examples.stocks.error2": "não encontrado",
   "mds.examples.stocks.symbol": "Simbolo",

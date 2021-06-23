@@ -94,7 +94,7 @@
   "mds.examples.simple-state-management.username": "",
   "mds.examples.simple-state-management.validator.minlength": "",
   "mds.examples.simple-state-management.validator.required": "",
-  "mds.examples.stocks.description": "Prosím, poskytnite existujúci symbol akciového trhu ako:",
+  "mds.examples.stocks.description": "",
   "mds.examples.stocks.error1": "Akcie so symbolom",
   "mds.examples.stocks.error2": "neboli nájdené",
   "mds.examples.stocks.symbol": "Symbol akcie",

@@ -22,7 +22,9 @@ import { GasPrice } from '../../../../core/ethereum/gas-price.model';
 export class StockMarketContainerComponent implements OnInit {
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
   stocks$: Observable<StockMarketState>;
+  
   gasPrice: GasPrice;
+  displayedColumns: string[] = ['fastest', 'safeSlow', 'average', 'speed'];
 
   loading: boolean = false;
   errorMessage;
@@ -41,7 +43,6 @@ export class StockMarketContainerComponent implements OnInit {
   onSymbolChange(symbol: string) {
     this.store.dispatch(actionStockMarketRetrieve({ symbol }));
   }
-
 
   getGasPrice() {
     this.loading = true;

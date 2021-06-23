@@ -1,19 +1,18 @@
 import { CommonModule } from '@angular/common';
 import { NgModule, Optional, SkipSelf, ErrorHandler } from '@angular/core';
-
 import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { FormsModule } from '@angular/forms';
+
 import { MaterialModule } from './material/material.module';
+import { FortawesomeModule } from './fortawesome/fortawesome.module';
 
 import { StoreRouterConnectingModule, RouterStateSerializer } from '@ngrx/router-store';
-
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { environment } from '../../environments/environment';
 
@@ -45,39 +44,25 @@ import {
   selectEffectiveTheme,
   selectSettingsStickyHeader
 } from './settings/settings.selectors';
-import {
-  faCog,
-  faBars,
-  faRocket,
-  faPowerOff,
-  faUserCircle,
-  faPlayCircle
-} from '@fortawesome/free-solid-svg-icons';
-import {
-  faGithub,
-  faMediumM,
-  faTwitter,
-  faInstagram,
-  faYoutube
-} from '@fortawesome/free-brands-svg-icons';
+
 import { GasPriceService } from './ethereum/gas-price.service';
 
 export {
+  AppState,
+  AnimationsService,
+  AuthGuardService,
+  GasPriceService,
+  LocalStorageService,
+  NotificationService,
   TitleService,
   selectAuth,
   authLogin,
   authLogout,
   routeAnimations,
-  AppState,
-  LocalStorageService,
-  selectIsAuthenticated,
   ROUTE_ANIMATIONS_ELEMENTS,
-  AnimationsService,
-  AuthGuardService,
-  selectRouterState,
-  NotificationService,
-  GasPriceService,
   selectEffectiveTheme,
+  selectIsAuthenticated,
+  selectRouterState,
   selectSettingsLanguage,
   selectSettingsStickyHeader
 };
@@ -98,6 +83,7 @@ export function httpLoaderFactory(http: HttpClient) {
     FormsModule,
 
     // material
+    FortawesomeModule,
     MaterialModule,
 
     // ngrx
@@ -114,8 +100,7 @@ export function httpLoaderFactory(http: HttpClient) {
         name: 'MedShare'
       }),
 
-    // 3rd party
-    FontAwesomeModule,
+    // 3rd party  
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -139,7 +124,7 @@ export function httpLoaderFactory(http: HttpClient) {
     MaterialModule,
 
     // 3rd party
-    FontAwesomeModule,
+    FortawesomeModule,    
     TranslateModule
   ]
 })
@@ -147,24 +132,10 @@ export class CoreModule {
   constructor(
     @Optional()
     @SkipSelf()
-    parentModule: CoreModule,
-    faIconLibrary: FaIconLibrary
+    parentModule: CoreModule
   ) {
     if (parentModule) {
       throw new Error('CoreModule is already loaded. Import only in AppModule');
     }
-    faIconLibrary.addIcons(
-      faCog,
-      faBars,
-      faRocket,
-      faPowerOff,
-      faUserCircle,
-      faPlayCircle,
-      faGithub,
-      faMediumM,
-      faTwitter,
-      faInstagram,
-      faYoutube
-    );
   }
 }

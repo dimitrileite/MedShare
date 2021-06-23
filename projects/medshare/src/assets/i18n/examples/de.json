@@ -94,7 +94,7 @@
   "mds.examples.simple-state-management.username": "",
   "mds.examples.simple-state-management.validator.minlength": "",
   "mds.examples.simple-state-management.validator.required": "",
-  "mds.examples.stocks.description": "Hier ist ein gültiges Aktiensymbol anzugeben:",
+  "mds.examples.stocks.description": "",
   "mds.examples.stocks.error1": "Aktienbestand",
   "mds.examples.stocks.error2": "nicht gefunden",
   "mds.examples.stocks.symbol": "Aktiensymbol",

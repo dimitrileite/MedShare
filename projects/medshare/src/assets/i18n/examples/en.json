@@ -94,7 +94,7 @@
   "mds.examples.simple-state-management.username": "Username",
   "mds.examples.simple-state-management.validator.minlength": "Please provide at least {{minlength}} characters",
   "mds.examples.simple-state-management.validator.required": "Please provide value",
-  "mds.examples.stocks.description": "Please provide some valid stock market symbol like:",
+  "mds.examples.stocks.description": "Please provide some valid currency symbol like:",
   "mds.examples.stocks.error1": "Stock",
   "mds.examples.stocks.error2": "not found",
   "mds.examples.stocks.symbol": "Stock symbol",

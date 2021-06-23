@@ -94,7 +94,7 @@
   "mds.examples.simple-state-management.username": "",
   "mds.examples.simple-state-management.validator.minlength": "",
   "mds.examples.simple-state-management.validator.required": "",
-  "mds.examples.stocks.description": "请提供一些合法的股票代码，比如：",
+  "mds.examples.stocks.description": "",
   "mds.examples.stocks.error1": "股票",
   "mds.examples.stocks.error2": "没有找到",
   "mds.examples.stocks.symbol": "股票代码",

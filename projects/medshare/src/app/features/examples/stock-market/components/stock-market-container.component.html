@@ -17,8 +17,7 @@
             </mat-form-field>
           </form>
           <p>
-            {{ 'mds.examples.stocks.description' | translate }} GOOGL, FB, AAPL, NVDA, AMZN,
-            TWTR, SNAP, TSLA...
+            {{ 'mds.examples.stocks.description' | translate }} USD, BRL, GBP, MDST, USDT...
           </p>
           <br>
         </div>
@@ -59,8 +58,12 @@
           <br>
         </div>
         <div class="col-md-6 col-lg-4 offset-lg-1">
-          <mat-spinner *ngIf="stocks.loading"></mat-spinner>
-          
+          <mat-spinner *ngIf="loading"></mat-spinner>          
+
+          <div *ngIf="errorMessage" class="alert alert-warning">
+            <strong>Warning!</strong> {{errorMessage | json}}
+          </div>
+
           <mat-card *ngIf="gasPrice">
             <mat-card-title>GasPrice<span>Fast</span>
             </mat-card-title>
@@ -71,41 +74,10 @@
                 {{gasPrice.fast}}00000000 ({{gasPrice.fastWait}}s)
               </p>
             </mat-card-subtitle>
-            <mat-card-content>
-              <table mat-table [dataSource]="gasPrice" class="mat-elevation-z8">
-
-                <!--- Note that these columns can be defined in any order.
-                      The actual rendered columns are set as a property on the row definition" -->
-              
-                <!-- Position Column -->
-                <ng-container matColumnDef="position">
-                  <th mat-header-cell *matHeaderCellDef> No. </th>
-                  <td mat-cell *matCellDef="let element">{{gasPrice.fast}}00000000 </td>
-                </ng-container>
-              
-                <!-- Name Column -->
-                <ng-container matColumnDef="name">
-                  <th mat-header-cell *matHeaderCellDef> Name </th>
-                  <td mat-cell *matCellDef="let element"> {{gasPrice.fastest}}00000000 </td>
-                </ng-container>
-              
-                <!-- Weight Column -->
-                <ng-container matColumnDef="weight">
-                  <th mat-header-cell *matHeaderCellDef> Weight </th>
-                  <td mat-cell *matCellDef="let element"> {{gasPrice.safeLow}}00000000 </td>
-                </ng-container>
-              
-                <!-- Symbol Column -->
-                <ng-container matColumnDef="symbol">
-                  <th mat-header-cell *matHeaderCellDef> Symbol </th>
-                  <td mat-cell *matCellDef="let element"> {{gasPrice.average}}00000000 </td>
-                </ng-container>
-              
-                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-              </table>                        
-
-              <a href="https://docs.ethgasstation.info/"><img src="https://gblobscdn.gitbook.com/spaces%2F-M4Tr40-JkLM9CWyiXAb%2Favatar-1586434471856.png?alt=media" width="40px;" alt=""/><br /><sub><b>GasStation</b></sub></a>
+            <mat-card-content>                          
+              <a href="https://docs.ethgasstation.info/"><img
+                  src="https://gblobscdn.gitbook.com/spaces%2F-M4Tr40-JkLM9CWyiXAb%2Favatar-1586434471856.png?alt=media"
+                  width="20px;" alt="EthGasStation" /><sub><b>EthGasStation</b></sub></a>
             </mat-card-content>
           </mat-card>
           <p *ngIf="stocks.error" class="error-state">
