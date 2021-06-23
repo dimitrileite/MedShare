@@ -41,6 +41,7 @@ import { NotificationService } from './notifications/notification.service';
 import { SettingsEffects } from './settings/settings.effects';
 import {
   selectSettingsLanguage,
+  selectSettingsCurrency,
   selectEffectiveTheme,
   selectSettingsStickyHeader
 } from './settings/settings.selectors';
@@ -64,6 +65,7 @@ export {
   selectIsAuthenticated,
   selectRouterState,
   selectSettingsLanguage,
+  selectSettingsCurrency,
   selectSettingsStickyHeader
 };
 
@@ -76,6 +78,7 @@ export function httpLoaderFactory(http: HttpClient) {
 }
 
 @NgModule({
+  declarations: [],
   imports: [
     // angular
     CommonModule,
@@ -109,13 +112,6 @@ export function httpLoaderFactory(http: HttpClient) {
       }
     })
   ],
-  declarations: [],
-  providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
-    { provide: ErrorHandler, useClass: AppErrorHandler },
-    { provide: RouterStateSerializer, useClass: CustomSerializer },
-    GasPriceService
-  ],
   exports: [
     // angular
     FormsModule,
@@ -126,6 +122,12 @@ export function httpLoaderFactory(http: HttpClient) {
     // 3rd party
     FortawesomeModule,    
     TranslateModule
+  ],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
+    { provide: ErrorHandler, useClass: AppErrorHandler },
+    { provide: RouterStateSerializer, useClass: CustomSerializer },
+    GasPriceService
   ]
 })
 export class CoreModule {

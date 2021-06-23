@@ -61,6 +61,11 @@
   "mds.settings.themes.sticky-header": "Sticky header",
   "mds.settings.themes.title": "Themes",
   "mds.settings.title": "Settings",
+  "mds.settings.wallet.currency.brl": "Brazilian Real",
+  "mds.settings.wallet.currency.eur": "EURO",
+  "mds.settings.wallet.currency.gbp": "Great Britain Pound",
+  "mds.settings.wallet.currency.usd": "US Dollars",
+  "mds.settings.wallet.placeholder": "Choose your default currency",
   "mds.settings.wallet.title": "Wallet",
   "mds.title.long": "MedShare",
   "mds.title.short": "Angular Starter"

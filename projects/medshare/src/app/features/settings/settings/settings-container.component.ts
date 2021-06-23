@@ -10,6 +10,7 @@ import {
   actionSettingsChangeAnimationsPage,
   actionSettingsChangeAutoNightMode,
   actionSettingsChangeLanguage,
+  actionSettingsChangeCurrency,
   actionSettingsChangeTheme,
   actionSettingsChangeStickyHeader
 } from '../../../core/settings/settings.actions';
@@ -27,6 +28,7 @@ import { DialogMnemonicComponent } from './components/dialog-mnemonic/dialog-mne
 })
 export class SettingsContainerComponent implements OnInit {
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
+  
   settings$: Observable<SettingsState>;
 
   themes = [
@@ -39,12 +41,19 @@ export class SettingsContainerComponent implements OnInit {
   languages = [
     { value: 'en', label: 'English' },
     { value: 'de', label: 'Deutsch' },
-    { value: 'sk', label: 'Slovenčina' },
-    { value: 'fr', label: 'Français' },
     { value: 'es', label: 'Español' },
+    { value: 'fr', label: 'Français' },
+    { value: 'he', label: 'עברית' },
     { value: 'pt-br', label: 'Português' },
-    { value: 'zh-cn', label: '简体中文' },
-    { value: 'he', label: 'עברית' }
+    { value: 'sk', label: 'Slovenčina' },
+    { value: 'zh-cn', label: '简体中文' }
+  ];
+
+  currencies = [
+    { value: 'usd', label: 'US Dollar' },    
+    { value: 'brl', label: 'Real Brasileiro' },
+    { value: 'eur', label: 'EURO' },
+    { value: 'gbp', label: 'Great Britain Pound' }
   ];
 
   mnemonic: string[];
@@ -62,6 +71,10 @@ export class SettingsContainerComponent implements OnInit {
 
   onLanguageSelect({ value: language }) {
     this.store.dispatch(actionSettingsChangeLanguage({ language }));
+  }
+
+  onCurrencySelect({ value: currency }) {
+    this.store.dispatch(actionSettingsChangeCurrency({ currency }));
   }
 
   onStickyHeaderToggle({ checked: stickyHeader }) {

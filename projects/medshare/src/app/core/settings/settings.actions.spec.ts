@@ -4,6 +4,7 @@ import {
   actionSettingsChangeAnimationsPageDisabled,
   actionSettingsChangeAutoNightMode,
   actionSettingsChangeHour,
+  actionSettingsChangeCurrency,
   actionSettingsChangeLanguage,
   actionSettingsChangeStickyHeader,
   actionSettingsChangeTheme
@@ -65,6 +66,15 @@ describe('Settings Actions', () => {
 
     expect(action.type).toEqual(actionSettingsChangeLanguage.type);
     expect(action.language).toEqual('en');
+  });
+
+  it('should create ActionSettingsChangeCurrency action', () => {
+    const action = actionSettingsChangeCurrency({
+      currency: 'usd'
+    });
+
+    expect(action.type).toEqual(actionSettingsChangeCurrency.type);
+    expect(action.currency).toEqual('usd');
   });
 
   it('should create ActionSettingsChangeStickyHeader action', () => {

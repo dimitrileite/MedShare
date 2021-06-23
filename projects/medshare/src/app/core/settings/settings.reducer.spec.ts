@@ -5,6 +5,7 @@ import {
   actionSettingsChangeAnimationsPage,
   actionSettingsChangeAnimationsPageDisabled,
   actionSettingsChangeAutoNightMode,
+  actionSettingsChangeCurrency,
   actionSettingsChangeHour,
   actionSettingsChangeLanguage,
   actionSettingsChangeStickyHeader,
@@ -19,9 +20,15 @@ describe('SettingsReducer', () => {
   });
 
   it('should update language', () => {
-    const action = actionSettingsChangeLanguage({ language: 'sk' });
+    const action = actionSettingsChangeLanguage({ language: 'pt-br' });
     const state = settingsReducer(undefined, action);
-    expect(state.language).toEqual('sk');
+    expect(state.language).toEqual('pt-br');
+  });
+
+  it('should update currency', () => {
+    const action = actionSettingsChangeCurrency({ currency: 'brl' });
+    const state = settingsReducer(undefined, action);
+    expect(state.currency).toEqual('brl');
   });
 
   it('should update theme', () => {

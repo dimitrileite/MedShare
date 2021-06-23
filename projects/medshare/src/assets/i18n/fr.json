@@ -61,6 +61,11 @@
   "mds.settings.themes.sticky-header": "Entête fixe",
   "mds.settings.themes.title": "Thèmes",
   "mds.settings.title": "Paramètres",
+  "mds.settings.wallet.currency.brl": "",
+  "mds.settings.wallet.currency.eur": "",
+  "mds.settings.wallet.currency.gbp": "",
+  "mds.settings.wallet.currency.usd": "",
+  "mds.settings.wallet.placeholder": "",
   "mds.settings.wallet.title": "",
   "mds.title.long": "Kit de démarrage Angular NgRx Material",
   "mds.title.short": "Kit de démarrage"

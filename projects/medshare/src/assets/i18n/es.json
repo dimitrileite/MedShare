@@ -61,6 +61,11 @@
   "mds.settings.themes.sticky-header": "",
   "mds.settings.themes.title": "Temas",
   "mds.settings.title": "Ajustes",
+  "mds.settings.wallet.currency.brl": "",
+  "mds.settings.wallet.currency.eur": "",
+  "mds.settings.wallet.currency.gbp": "",
+  "mds.settings.wallet.currency.usd": "",
+  "mds.settings.wallet.placeholder": "",
   "mds.settings.wallet.title": "",
   "mds.title.long": "MedShare",
   "mds.title.short": "Inicio en Angular"

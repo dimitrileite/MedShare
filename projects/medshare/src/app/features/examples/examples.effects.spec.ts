@@ -45,7 +45,7 @@ describe('SettingsEffects', () => {
       const effect = new ExamplesEffects(
         actions,
         store,
-        translateService,
+        translateService,        
         router,
         titleService
       );

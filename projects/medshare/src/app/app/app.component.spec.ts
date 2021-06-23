@@ -10,8 +10,10 @@ import {
   selectEffectiveTheme,
   selectIsAuthenticated,
   selectSettingsLanguage,
+  selectSettingsCurrency,
   selectSettingsStickyHeader
 } from '../core/core.module';
+
 import { SharedModule } from '../shared/shared.module';
 
 import { AppComponent } from './app.component';
@@ -38,6 +40,7 @@ describe('AppComponent', () => {
       store.overrideSelector(selectIsAuthenticated, false);
       store.overrideSelector(selectSettingsStickyHeader, true);
       store.overrideSelector(selectSettingsLanguage, 'en');
+      store.overrideSelector(selectSettingsCurrency, 'usd');
       store.overrideSelector(selectEffectiveTheme, 'default');
     })
   );

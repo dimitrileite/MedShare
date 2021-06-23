@@ -51,16 +51,16 @@
         <!-- Default Currency -->
         <div class="icon-form-field">
           <mat-icon color="accent">
-            <fa-icon icon="currency" color="accent"></fa-icon>
+            <fa-icon icon="dollar-sign" color="accent"></fa-icon>      
           </mat-icon>
           <mat-form-field>
-            <mat-select [placeholder]="'mds.settings.general.placeholder' | translate" [ngModel]="settings.language"
-              (selectionChange)="onLanguageSelect($event)" name="language">
-              <ng-container *ngFor="let l of languages">
+            <mat-select [placeholder]="'mds.settings.wallet.placeholder' | translate" [ngModel]="settings.currency"
+              (selectionChange)="onCurrencySelect($event)" name="currency">
+              <ng-container *ngFor="let c of currencies">
                 <!-- ngFor hack of missing ngLet of Angular -->
-                <mat-option *ngFor="let title of ['mds.settings.general.language.' + l.value | translate]"
-                  [value]="l.value" [title]="title !== l.label ? title : ''">
-                  {{ l.label }}
+                <mat-option *ngFor="let title of ['mds.settings.wallet.currency.' + c.value | translate]"
+                  [value]="c.value" [title]="title !== c.label ? title : ''">
+                  {{ c.label }}
                 </mat-option>
               </ng-container>
             </mat-select>

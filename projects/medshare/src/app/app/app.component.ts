@@ -13,11 +13,13 @@ import {
   selectIsAuthenticated,
   selectSettingsStickyHeader,
   selectSettingsLanguage,
+  selectSettingsCurrency,
   selectEffectiveTheme
 } from '../core/core.module';
 import {
   actionSettingsChangeAnimationsPageDisabled,
-  actionSettingsChangeLanguage
+  actionSettingsChangeLanguage,
+  actionSettingsChangeCurrency
 } from '../core/settings/settings.actions';
 
 @Component({
@@ -46,6 +48,7 @@ export class AppComponent implements OnInit {
   isAuthenticated$: Observable<boolean>;
   stickyHeader$: Observable<boolean>;
   language$: Observable<string>;
+  currency$: Observable<string>;
   theme$: Observable<string>;
 
   constructor(
@@ -70,6 +73,7 @@ export class AppComponent implements OnInit {
     this.isAuthenticated$ = this.store.pipe(select(selectIsAuthenticated));
     this.stickyHeader$ = this.store.pipe(select(selectSettingsStickyHeader));
     this.language$ = this.store.pipe(select(selectSettingsLanguage));
+    this.currency$ = this.store.pipe(select(selectSettingsCurrency)); 
     this.theme$ = this.store.pipe(select(selectEffectiveTheme));
   }
 
@@ -83,5 +87,9 @@ export class AppComponent implements OnInit {
 
   onLanguageSelect({ value: language }) {
     this.store.dispatch(actionSettingsChangeLanguage({ language }));
+  }
+
+  onCurrencySelect({ value: currency }) {
+    this.store.dispatch(actionSettingsChangeCurrency({ currency }));
   }
 }

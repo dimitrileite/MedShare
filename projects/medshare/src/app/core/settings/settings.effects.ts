@@ -5,13 +5,7 @@ import { select, Store } from '@ngrx/store';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { TranslateService } from '@ngx-translate/core';
 import { combineLatest, merge, of } from 'rxjs';
-import {
-  tap,
-  withLatestFrom,
-  distinctUntilChanged,
-  filter
-} from 'rxjs/operators';
-
+import { tap, withLatestFrom, distinctUntilChanged, filter } from 'rxjs/operators';
 import { selectSettingsState } from '../core.state';
 import { LocalStorageService } from '../local-storage/local-storage.service';
 import { AnimationsService } from '../animations/animations.service';
@@ -23,16 +17,20 @@ import {
   actionSettingsChangeAnimationsPageDisabled,
   actionSettingsChangeAutoNightMode,
   actionSettingsChangeLanguage,
+  actionSettingsChangeCurrency,
   actionSettingsChangeTheme,
   actionSettingsChangeStickyHeader,
   actionSettingsChangeHour
 } from './settings.actions';
+
 import {
   selectEffectiveTheme,
   selectSettingsLanguage,
+  selectSettingsCurrency,
   selectPageAnimations,
   selectElementsAnimations
 } from './settings.selectors';
+
 import { State } from './settings.model';
 
 export const SETTINGS_KEY = 'SETTINGS';
@@ -64,6 +62,7 @@ export class SettingsEffects {
           actionSettingsChangeAnimationsPageDisabled,
           actionSettingsChangeAutoNightMode,
           actionSettingsChangeLanguage,
+          actionSettingsChangeCurrency,
           actionSettingsChangeStickyHeader,
           actionSettingsChangeTheme
         ),

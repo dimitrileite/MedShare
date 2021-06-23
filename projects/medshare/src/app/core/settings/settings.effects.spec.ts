@@ -28,7 +28,7 @@ describe('SettingsEffects', () => {
   let overlayContainer: jasmine.SpyObj<OverlayContainer>;
   let titleService: jasmine.SpyObj<TitleService>;
   let animationsService: jasmine.SpyObj<AnimationsService>;
-  let translateService: jasmine.SpyObj<TranslateService>;
+  let translateService: jasmine.SpyObj<TranslateService>;  
   let store: jasmine.SpyObj<Store<AppState>>;
   let ngZone: jasmine.SpyObj<NgZone>;
 
@@ -62,15 +62,16 @@ describe('SettingsEffects', () => {
       const { cold } = helpers;
 
       const settings: SettingsState = {
-        language: 'en',
-        pageAnimations: true,
-        elementsAnimations: true,
-        theme: 'default',
-        nightTheme: 'default',
         autoNightMode: false,
-        stickyHeader: false,
+        currency: 'usd',
+        elementsAnimations: true,
+        hour: 12,
+        language: 'en',
+        nightTheme: 'default',
+        pageAnimations: true,
         pageAnimationsDisabled: true,
-        hour: 12
+        stickyHeader: false,
+        theme: 'default'
       };
       store.pipe.and.returnValue(of(settings));
       const persistAction = actionSettingsChangeTheme({ theme: 'DEFAULT' });

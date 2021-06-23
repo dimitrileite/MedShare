@@ -61,6 +61,11 @@
   "mds.settings.themes.sticky-header": "",
   "mds.settings.themes.title": "Themes",
   "mds.settings.title": "Configurações",
+  "mds.settings.wallet.currency.brl": "Real Brasileiro",
+  "mds.settings.wallet.currency.eur": "EURO",
+  "mds.settings.wallet.currency.gbp": "Libras Esterlinas",
+  "mds.settings.wallet.currency.usd": "Dólares Americanos",
+  "mds.settings.wallet.placeholder": "Escolha sua moeda padrão",
   "mds.settings.wallet.title": "Carteira",
   "mds.title.long": "Angular Ngrx Material Início",
   "mds.title.short": "Angular Starter"
