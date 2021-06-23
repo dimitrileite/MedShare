@@ -14,7 +14,7 @@
     "watch": "ng test --configuration=test --browsers ChromeHeadless --watch --reporters dots",
     "e2e": "ng e2e",
     "e2e:ci": "ng e2e",
-    "ci": "npm run format:test && npm run lint && ng test --configuration=test --browsers ChromeTravisCi --code-coverage && npm run build:prod -- --deploy-url /medshare/ --base-href /medshare/",
+    "ci": "npm run format:test && npm run lint && ng test --configuration=test --browsers ChromeTravisCi --code-coverage && npm run build:prod --deploy-url /medshare/ --base-href /medshare/",
     "format:write": "prettier projects/**/*.{ts,json,md,scss} --write",
     "format:test": "prettier projects/**/*.{ts,json,md,scss} --list-different",
     "release": "standard-version && git push --follow-tags origin master",
