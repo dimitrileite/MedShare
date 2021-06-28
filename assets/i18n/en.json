@@ -37,6 +37,7 @@
   "mds.menu.features": "Features",
   "mds.menu.login": "Sign in",
   "mds.menu.logout": "Logout",
+  "mds.menu.providers": "Providers",
   "mds.menu.settings": "Settings",
   "mds.providers.angular": "Modern powerful framework",
   "mds.providers.angular-cli": "A command line interface for Angular",
@@ -54,7 +55,7 @@
   "mds.providers.rxjs": "Reactive programming with async collections using Observables",
   "mds.providers.themes.description": "Flexible theming support for provided and custom components",
   "mds.providers.themes.title": "Themes",
-  "mds.providers.title": "Features",
+  "mds.providers.title": "Providers",
   "mds.providers.typescript": "Superior developer experience, code completion, refactoring and less bugs",
   "mds.settings.animations.elements": "Navigation page elements slide up",
   "mds.settings.animations.page": "Navigation whole page transition",
@@ -86,5 +87,5 @@
   "mds.settings.wallet.placeholder": "Choose your default currency",
   "mds.settings.wallet.title": "Wallet",
   "mds.title.long": "MedShare",
-  "mds.title.short": "Health Care System based on Consortium and Powered by Ethereum Blockchain"
+  "mds.title.short": "MedShare"
 }

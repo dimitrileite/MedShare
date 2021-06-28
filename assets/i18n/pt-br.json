@@ -37,6 +37,7 @@
   "mds.menu.features": "Características",
   "mds.menu.login": "Sign in",
   "mds.menu.logout": "Logout",
+  "mds.menu.providers": "Especialidades",
   "mds.menu.settings": "Configurações",
   "mds.providers.angular": "Framework moderno e poderoso",
   "mds.providers.angular-cli": "Interface de comando para o Angular",
@@ -54,7 +55,7 @@
   "mds.providers.rxjs": "Programação reativa com coleções assíncronas usando Observables",
   "mds.providers.themes.description": "Temas flexíveis que são suportados port provided e custom components",
   "mds.providers.themes.title": "Temas",
-  "mds.providers.title": "Características",
+  "mds.providers.title": "Fornecedores",
   "mds.providers.typescript": "Experiência de desenvolvimento superior, facilita o auto complete, a refatoração e causa menos bugs",
   "mds.settings.animations.elements": "Elementos de navegação deslizam para cima",
   "mds.settings.animations.page": "Navegação com transição em toda pagina",
@@ -86,5 +87,5 @@
   "mds.settings.wallet.placeholder": "Escolha sua moeda padrão",
   "mds.settings.wallet.title": "Carteira",
   "mds.title.long": "MedShare",
-  "mds.title.short": "Sistema de Plano de Saúde baseado em Consórcio e Empoderado pelo Blockchain da Ethereum"
+  "mds.title.short": "MedShare"
 }
