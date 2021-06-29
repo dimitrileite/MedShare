@@ -25,12 +25,13 @@ import {
   faPowerOff,
   faRocket,
   faSquare,
+  faStar,
   faStream,
   faTasks,
   faTimes,
   faTrash,
   faUserCircle,
-  faWindowMaximize,
+  faWindowMaximize
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faDiscord,
@@ -38,23 +39,17 @@ import {
   faInstagram,
   faMediumM,
   faTwitter,
+  faWhatsapp,
   faYoutube
 } from '@fortawesome/free-brands-svg-icons';
 
-
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule
-  ],
-  exports: [
-    FontAwesomeModule,
-  ]
+  imports: [CommonModule],
+  exports: [FontAwesomeModule]
 })
 export class FortawesomeModule {
-  constructor(
-    faIconLibrary: FaIconLibrary
-  ) {
+  constructor(faIconLibrary: FaIconLibrary) {
     faIconLibrary.addIcons(
       faBars,
       faBook,
@@ -74,6 +69,7 @@ export class FortawesomeModule {
       faPowerOff,
       faRocket,
       faSquare,
+      faStar,
       faStream,
       faTasks,
       faTimes,
@@ -86,6 +82,7 @@ export class FortawesomeModule {
       faInstagram,
       faMediumM,
       faTwitter,
+      faWhatsapp,
       faYoutube
     );
   }

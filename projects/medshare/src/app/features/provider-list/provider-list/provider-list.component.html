@@ -3,28 +3,48 @@
     <div class="col-md-12">
       <h1 rtl class="main-heading">{{ 'mds.providers.title' | translate }}</h1>
     </div>
+
   </div>
-  <div class="row align-items-end">
+
+  <mat-spinner *ngIf="loading"></mat-spinner>
+  <mat-toolbar *ngIf="successMsg" color="accent">{{ successMsg }}</mat-toolbar>
+  <mat-toolbar *ngIf="errorMsg" color="warn">{{ errorMsg }}</mat-toolbar>
+
+  <div *ngIf="!loading && !loading" class="row align-items-end">
     <div *ngFor="let provider of providers" class="col-md-6 col-lg-4" [ngClass]="routeAnimationsElements">
       <mat-card>
         <mat-card-title>
-          <code *ngIf="provider.version">{{provider.version}}</code>{{provider.name | translate}}
+          <code *ngIf="provider.rating">{{provider.rating}}<fa-icon icon="star"></fa-icon></code>{{provider.name |
+          translate}}
         </mat-card-title>
         <mat-card-subtitle rtl>
           {{ provider.description | translate }}
         </mat-card-subtitle>
         <mat-card-actions>
-          <a *ngIf="provider.github" mat-icon-button [href]="provider.github" rel="noopener noreferrer" target="_blank">
-            <fa-icon [icon]="['fab','github']"></fa-icon>
+          <a *ngIf="provider.whatsapp" mat-icon-button [href]="provider.whatsapp" rel="noopener noreferrer"
+            target="_blank">
+            <fa-icon [icon]="['fab','whatsapp']"></fa-icon>
+          </a>
+          <a *ngIf="provider.instagram" mat-icon-button [href]="provider.instagram" rel="noopener noreferrer"
+            target="_blank">
+            <fa-icon [icon]="['fab','instagram']"></fa-icon>
           </a>
           <a mat-button [href]="provider.documentation" rel="noopener noreferrer" target="_blank">
             <fa-icon icon="book"></fa-icon>{{ 'mds.providers.documentation' | translate }}
           </a>
-          <a *ngIf="provider.medium" mat-button [href]="provider.medium" rel="noopener noreferrer" target="_blank">
+          <a *ngIf="provider.specialty" mat-button [href]="provider.specialty" rel="noopener noreferrer"
+            target="_blank">
             <fa-icon [icon]="['fab','medium-m']"></fa-icon>{{ 'mds.providers.guide' | translate }}
           </a>
         </mat-card-actions>
       </mat-card>
     </div>
   </div>
+
+  <div class="d-grid d-md-flex justify-content-md-end">
+    <button type="button" mat-fab color="primary" class="add me-md-3 mb-md-3" [ngClass]="routeAnimationsElements" (click)="addNewProvider()">
+      <fa-icon icon="plus"></fa-icon>
+    </button>    
+  </div>  
+
 </div>
