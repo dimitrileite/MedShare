@@ -2,7 +2,7 @@ import { createSelector } from '@ngrx/store';
 
 import { ExamplesState, selectExamples } from '../examples.state';
 
-export const selectFormState = createSelector(
+export const selectProviderFormState = createSelector(
   selectExamples,
-  (state: ExamplesState) => state.form
+  (state: ExamplesState) => state.providerForm
 );

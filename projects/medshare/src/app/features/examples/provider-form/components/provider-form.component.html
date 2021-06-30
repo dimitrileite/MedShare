@@ -64,7 +64,7 @@
               <textarea matInput placeholder="{{ 'mds.examples.form.placeholder4' | translate }}"
                 formControlName="description" minlength="10" maxlength="1000" cdkTextareaAutosize
                 #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="3" cdkAutosizeMaxRows="10"></textarea>
-              <mat-hint align="end">{{form.get('description').value?.length}} /
+              <mat-hint align="end">{{providerForm.get('description').value?.length}} /
                 1000</mat-hint>
               <mat-error *ngIf="providerForm.get('description').hasError('required')">
                 {{ 'mds.examples.form.placeholder4' | translate }}

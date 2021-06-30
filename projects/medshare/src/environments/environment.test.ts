@@ -4,6 +4,7 @@ export const environment = {
   appName: 'MedShare Test',
   envName: 'TEST',
   production: false,
+  API_URL: 'http://localhost:3000',
   test: true,
   i18nPrefix: '',
   versions: {

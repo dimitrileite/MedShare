@@ -1,22 +1,25 @@
-import { FormState, Form } from './provider-form.model';
-import { actionFormReset, actionFormUpdate } from './provider-form.actions';
+import { ProviderFormState, ProviderForm } from './provider-form.model';
+import {
+  actionProviderFormReset,
+  actionProviderFormUpdate
+} from './provider-form.actions';
 import { Action, createReducer, on } from '@ngrx/store';
 
-export const initialState: FormState = {
-  providerForm: {} as Form
+export const initialState: ProviderFormState = {
+  providerForm: {} as ProviderForm
 };
 
 const reducer = createReducer(
   initialState,
-  on(actionFormUpdate, (state, { providerForm }) => ({
+  on(actionProviderFormUpdate, (state, { providerForm }) => ({
     ...state,
     providerForm
   })),
-  on(actionFormReset, () => initialState)
+  on(actionProviderFormReset, () => initialState)
 );
 
 export function providerFormReducer(
-  state: FormState | undefined,
+  state: ProviderFormState | undefined,
   action: Action
 ) {
   return reducer(state, action);

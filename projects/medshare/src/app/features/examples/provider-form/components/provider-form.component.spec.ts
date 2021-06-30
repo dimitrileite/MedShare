@@ -7,19 +7,19 @@ import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { NotificationService } from '../../../../core/core.module';
 import { SharedModule } from '../../../../shared/shared.module';
 
-import { FormComponent } from './provider-form.component';
-import { selectFormState } from '../provider-form.selectors';
-import { Form } from '../provider-form.model';
+import { ProviderFormComponent } from './provider-form.component';
+import { selectProviderFormState } from '../provider-form.selectors';
+import { ProviderForm } from '../provider-form.model';
 
 import { HarnessLoader } from '@angular/cdk/testing';
 import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
 import { MatInputHarness } from '@angular/material/input/testing';
 import { MatButtonHarness } from '@angular/material/button/testing';
 
-describe('FormComponent', () => {
+describe('ProviderFormComponent', () => {
   let store: MockStore;
-  let component: FormComponent;
-  let fixture: ComponentFixture<FormComponent>;
+  let component: ProviderFormComponent;
+  let fixture: ComponentFixture<ProviderFormComponent>;
   let dispatchSpy: jasmine.Spy;
   let loader: HarnessLoader;
 
@@ -41,13 +41,15 @@ describe('FormComponent', () => {
   beforeEach(async () => {
     TestBed.configureTestingModule({
       imports: [SharedModule, NoopAnimationsModule, TranslateModule.forRoot()],
-      declarations: [FormComponent],
+      declarations: [ProviderFormComponent],
       providers: [provideMockStore(), NotificationService]
     });
 
     store = TestBed.inject(MockStore);
-    store.overrideSelector(selectFormState, { providerForm: {} as Form });
-    fixture = TestBed.createComponent(FormComponent);
+    store.overrideSelector(selectProviderFormState, {
+      providerForm: {} as ProviderForm
+    });
+    fixture = TestBed.createComponent(ProviderFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
     loader = TestbedHarnessEnvironment.loader(fixture);
@@ -63,7 +65,9 @@ describe('FormComponent', () => {
     await saveButton.click();
 
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
-    expect(dispatchSpy.calls.mostRecent().args[0].type).toBe('[Form] Update');
+    expect(dispatchSpy.calls.mostRecent().args[0].type).toBe(
+      '[ProviderForm] Update'
+    );
     expect(dispatchSpy.calls.mostRecent().args[0].form).toEqual({
       autosave: false,
       username: 'tomastrajan',
@@ -85,7 +89,9 @@ describe('FormComponent', () => {
     const usernameValue = await usernameInput.getValue();
 
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
-    expect(dispatchSpy.calls.mostRecent().args[0].type).toBe('[Form] Reset');
+    expect(dispatchSpy.calls.mostRecent().args[0].type).toBe(
+      '[ProviderForm] Reset'
+    );
     expect(usernameValue).toBe('');
   });
 });

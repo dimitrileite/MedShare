@@ -22,6 +22,7 @@ import { ChildComponent } from './theming/child/child.component';
 import { CrudComponent } from './crud/components/crud.component';
 import { BooksEffects } from './crud/books.effects';
 import { FormComponent } from './form/components/form.component';
+import { ProviderFormComponent } from './provider-form/components/provider-form.component';
 import { FormEffects } from './form/form.effects';
 import { AuthenticatedComponent } from './authenticated/authenticated.component';
 import { NotificationsComponent } from './notifications/components/notifications.component';
@@ -70,6 +71,7 @@ export function httpLoaderFactory(http: HttpClient) {
     AuthenticatedComponent,
     CrudComponent,
     FormComponent,
+    ProviderFormComponent,
     NotificationsComponent,
     UserComponent,
     ElementsComponent

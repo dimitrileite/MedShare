@@ -1,4 +1,4 @@
-export interface Form {
+export interface ProviderForm {
   autosave: boolean;
   username: string;
   password: string;
@@ -9,6 +9,6 @@ export interface Form {
   rating: number;
 }
 
-export interface FormState {
-  providerForm: Form;
+export interface ProviderFormState {
+  providerForm: ProviderForm;
 }

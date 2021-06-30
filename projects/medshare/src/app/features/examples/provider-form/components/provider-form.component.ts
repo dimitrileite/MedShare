@@ -10,17 +10,20 @@ import {
   NotificationService
 } from '../../../../core/core.module';
 
-import { actionFormReset, actionFormUpdate } from '../provider-form.actions';
-import { selectFormState } from '../provider-form.selectors';
-import { Form } from '../provider-form.model';
+import {
+  actionProviderFormReset,
+  actionProviderFormUpdate
+} from '../provider-form.actions';
+import { selectProviderFormState } from '../provider-form.selectors';
+import { ProviderForm } from '../provider-form.model';
 
 @Component({
-  selector: 'mds-form',
+  selector: 'mds-provider-form',
   templateUrl: './provider-form.component.html',
   styleUrls: ['./provider-form.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class FormComponent implements OnInit {
+export class ProviderFormComponent implements OnInit {
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
 
   providerForm = this.fb.group({
@@ -41,7 +44,7 @@ export class FormComponent implements OnInit {
     rating: [0, Validators.required]
   });
 
-  providerFormValueChanges$: Observable<Form>;
+  providerFormValueChanges$: Observable<ProviderForm>;
 
   constructor(
     private fb: FormBuilder,
@@ -51,28 +54,32 @@ export class FormComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.formValueChanges$ = this.form.valueChanges.pipe(
+    this.providerFormValueChanges$ = this.providerForm.valueChanges.pipe(
       debounceTime(500),
-      filter((form: Form) => providerForm.autosave)
+      filter((providerForm: ProviderForm) => providerForm.autosave)
     );
     this.store
-      .pipe(select(selectFormState), take(1))
-      .subscribe((form) => this.form.patchValue(form.form));
+      .pipe(select(selectProviderFormState), take(1))
+      .subscribe((providerForm) =>
+        this.providerForm.patchValue(providerForm.providerForm)
+      );
   }
 
-  update(form: Form) {
-    this.store.dispatch(actionFormUpdate({ providerForm }));
+  update(providerForm: ProviderForm) {
+    this.store.dispatch(actionProviderFormUpdate({ providerForm }));
   }
 
   save() {
-    this.store.dispatch(actionFormUpdate({ providerForm: this.form.value }));
+    this.store.dispatch(
+      actionProviderFormUpdate({ providerForm: this.providerForm.value })
+    );
   }
 
   submit() {
-    if (this.form.valid) {
+    if (this.providerForm.valid) {
       this.save();
       this.notificationService.info(
-        (this.form.value.requestGift
+        (this.providerForm.value.requestGift
           ? this.translate.instant('mds.examples.form.text4')
           : this.translate.instant('mds.examples.form.text5')) +
           ' : ' +
@@ -82,9 +89,9 @@ export class FormComponent implements OnInit {
   }
 
   reset() {
-    this.form.reset();
-    this.form.clearValidators();
-    this.form.clearAsyncValidators();
-    this.store.dispatch(actionFormReset());
+    this.providerForm.reset();
+    this.providerForm.clearValidators();
+    this.providerForm.clearAsyncValidators();
+    this.store.dispatch(actionProviderFormReset());
   }
 }

@@ -1,9 +1,12 @@
-import { Form } from './provider-form.model';
-import { actionFormUpdate, actionFormReset } from './provider-form.actions';
+import { ProviderForm } from './provider-form.model';
+import {
+  actionProviderFormUpdate,
+  actionProviderFormReset
+} from './provider-form.actions';
 
-describe('Form Actions', () => {
-  it('should create ActionFormUpdate action', () => {
-    const testForm: Form = {
+describe('Provider Form Actions', () => {
+  it('should create ActionProviderFormUpdate action', () => {
+    const testProviderForm: ProviderForm = {
       autosave: false,
       username: 'test',
       password: 'test',
@@ -13,15 +16,15 @@ describe('Form Actions', () => {
       birthday: new Date(),
       rating: 10
     };
-    const action = actionFormUpdate({
-      providerForm: testForm
+    const action = actionProviderFormUpdate({
+      providerForm: testProviderForm
     });
-    expect(action.type).toEqual(actionFormUpdate.type);
-    expect(action.form).toEqual(jasmine.objectContaining(testForm));
+    expect(action.type).toEqual(actionProviderFormUpdate.type);
+    expect(action.form).toEqual(jasmine.objectContaining(testProviderForm));
   });
 
-  it('should create ActionFormReset action', () => {
-    const action = actionFormReset();
-    expect(action.type).toEqual(actionFormReset.type);
+  it('should create ActionProviderFormReset action', () => {
+    const action = actionProviderFormReset();
+    expect(action.type).toEqual(actionProviderFormReset.type);
   });
 });
