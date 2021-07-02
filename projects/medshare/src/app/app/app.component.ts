@@ -21,6 +21,7 @@ import {
   actionSettingsChangeLanguage,
   actionSettingsChangeCurrency
 } from '../core/settings/settings.actions';
+import { IdenticonOptions } from '../core/ethereum/identicon.service';
 
 @Component({
   selector: 'mds-root',
@@ -50,6 +51,19 @@ export class AppComponent implements OnInit {
   language$: Observable<string>;
   currency$: Observable<string>;
   theme$: Observable<string>;
+
+  address: string = '';
+  identiconOptions: IdenticonOptions = {
+    // All options are optional
+    seed: this.address, // seed used to generate icon data, default: random
+    color: '', // to manually specify the icon color, default: random
+    bgcolor: '', // choose a different background color, default: random
+    size: 8, // width/height of the icon in blocks, default: 8
+    scale: 4, // width/height of each block in pixels, default: 4
+    spotcolor: '' // each pixel has a 13% chance of being of a third color,
+    // default: random. Set to -1 to disable it.
+    // These "spots" create structures that look like eyes, mouths and noses.
+  };
 
   constructor(
     private store: Store,

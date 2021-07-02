@@ -28,7 +28,7 @@ import { DialogMnemonicComponent } from './components/dialog-mnemonic/dialog-mne
 })
 export class SettingsContainerComponent implements OnInit {
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
-  
+
   settings$: Observable<SettingsState>;
 
   themes = [
@@ -50,7 +50,7 @@ export class SettingsContainerComponent implements OnInit {
   ];
 
   currencies = [
-    { value: 'usd', label: 'US Dollar' },    
+    { value: 'usd', label: 'US Dollar' },
     { value: 'brl', label: 'Real Brasileiro' },
     { value: 'eur', label: 'EURO' },
     { value: 'gbp', label: 'Great Britain Pound' }
@@ -58,15 +58,14 @@ export class SettingsContainerComponent implements OnInit {
 
   mnemonic: string[];
 
-  constructor(private store: Store<State>,
+  constructor(
+    private store: Store<State>,
     public dialog: MatDialog,
     private _ethereumService: EthereumService
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.settings$ = this.store.pipe(select(selectSettings));
-    this._ethereumService.createWallet();
-    this.mnemonic = this._ethereumService.getRandomMnemonic();
   }
 
   onLanguageSelect({ value: language }) {
@@ -81,13 +80,13 @@ export class SettingsContainerComponent implements OnInit {
     this.store.dispatch(actionSettingsChangeStickyHeader({ stickyHeader }));
   }
 
-  onOpenDialogClick(): void {  
+  onOpenDialogClick(): void {
     const dialogRef = this.dialog.open(DialogMnemonicComponent, {
       width: '250px',
       data: { mnemonic: this.mnemonic }
     });
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe((result) => {
       console.log('The dialog was closed');
       /* this.animal = result; */
     });
@@ -100,7 +99,6 @@ export class SettingsContainerComponent implements OnInit {
   onAutoNightModeToggle({ checked: autoNightMode }) {
     this.store.dispatch(actionSettingsChangeAutoNightMode({ autoNightMode }));
   }
-
 
   onPageAnimationsToggle({ checked: pageAnimations }) {
     this.store.dispatch(actionSettingsChangeAnimationsPage({ pageAnimations }));

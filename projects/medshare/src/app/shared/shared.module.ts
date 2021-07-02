@@ -5,30 +5,31 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { MaterialModule } from './../core/material/material.module';
 import { FortawesomeModule } from './../core/fortawesome/fortawesome.module';
+import { EthereumModule } from '../core/ethereum/ethereum.module';
 
 import { BigInputComponent } from './big-input/big-input/big-input.component';
 import { BigInputActionComponent } from './big-input/big-input-action/big-input-action.component';
 import { RtlSupportDirective } from './rtl-support/rtl-support.directive';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-
-    MaterialModule,
-    FortawesomeModule, 
-    TranslateModule,
-  ],
   declarations: [
     BigInputComponent,
     BigInputActionComponent,
     RtlSupportDirective
   ],
+  imports: [
+    CommonModule,
+    FormsModule,
+
+    MaterialModule,
+    FortawesomeModule,
+    TranslateModule
+  ],
   exports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    
+
     MaterialModule,
     FortawesomeModule,
     TranslateModule,
@@ -39,5 +40,5 @@ import { RtlSupportDirective } from './rtl-support/rtl-support.directive';
   ]
 })
 export class SharedModule {
-  constructor() { }
+  constructor() {}
 }

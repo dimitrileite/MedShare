@@ -4,19 +4,19 @@ import { tap } from 'rxjs/operators';
 
 import { LocalStorageService } from '../../../core/core.module';
 
-import { actionProviderFormUpdate } from './provider-form.actions';
+import { actionUserFormUpdate } from './user-form.actions';
 
 export const FORM_KEY = 'EXAMPLES.FORM';
 
 @Injectable()
-export class ProviderFormEffects {
+export class UserFormEffects {
   persistForm = createEffect(
     () =>
       this.actions$.pipe(
-        ofType(actionProviderFormUpdate),
+        ofType(actionUserFormUpdate),
         tap((action) =>
           this.localStorageService.setItem(FORM_KEY, {
-            providerForm: action.providerForm
+            userForm: action.userForm
           })
         )
       ),

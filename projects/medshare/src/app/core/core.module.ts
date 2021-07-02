@@ -1,13 +1,21 @@
 import { CommonModule } from '@angular/common';
 import { NgModule, Optional, SkipSelf, ErrorHandler } from '@angular/core';
-import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
+import {
+  HttpClientModule,
+  HttpClient,
+  HTTP_INTERCEPTORS
+} from '@angular/common/http';
 
 import { FormsModule } from '@angular/forms';
 
 import { MaterialModule } from './material/material.module';
 import { FortawesomeModule } from './fortawesome/fortawesome.module';
+import { EthereumModule } from './ethereum/ethereum.module';
 
-import { StoreRouterConnectingModule, RouterStateSerializer } from '@ngrx/router-store';
+import {
+  StoreRouterConnectingModule,
+  RouterStateSerializer
+} from '@ngrx/router-store';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -46,13 +54,10 @@ import {
   selectSettingsStickyHeader
 } from './settings/settings.selectors';
 
-import { GasPriceService } from './ethereum/gas-price.service';
-
 export {
   AppState,
   AnimationsService,
   AuthGuardService,
-  GasPriceService,
   LocalStorageService,
   NotificationService,
   TitleService,
@@ -86,7 +91,6 @@ export function httpLoaderFactory(http: HttpClient) {
     FormsModule,
 
     // material
-    FortawesomeModule,
     MaterialModule,
 
     // ngrx
@@ -100,10 +104,12 @@ export function httpLoaderFactory(http: HttpClient) {
     environment.production
       ? []
       : StoreDevtoolsModule.instrument({
-        name: 'MedShare'
-      }),
+          name: 'MedShare'
+        }),
 
-    // 3rd party  
+    // 3rd party
+    EthereumModule,
+    FortawesomeModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -120,14 +126,14 @@ export function httpLoaderFactory(http: HttpClient) {
     MaterialModule,
 
     // 3rd party
-    FortawesomeModule,    
+    FortawesomeModule,
+    EthereumModule,
     TranslateModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
     { provide: ErrorHandler, useClass: AppErrorHandler },
-    { provide: RouterStateSerializer, useClass: CustomSerializer },
-    GasPriceService
+    { provide: RouterStateSerializer, useClass: CustomSerializer }
   ]
 })
 export class CoreModule {

@@ -10,6 +10,7 @@ export const environment = {
   envName: 'DEV',
   production: false,
   API_URL: 'http://localhost:3000',
+  /* API_URL: 'https://medshare-server.herokuapp.com', */
   test: false,
   i18nPrefix: '',
   versions: {

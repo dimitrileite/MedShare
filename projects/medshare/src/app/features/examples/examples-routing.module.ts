@@ -10,6 +10,8 @@ import { TodosContainerComponent } from './todos/components/todos-container.comp
 import { StockMarketContainerComponent } from './stock-market/components/stock-market-container.component';
 import { CrudComponent } from './crud/components/crud.component';
 import { FormComponent } from './form/components/form.component';
+import { ProviderFormComponent } from './provider-form/components/provider-form.component';
+import { UserFormComponent } from './user-form/components/user-form.component';
 import { NotificationsComponent } from './notifications/components/notifications.component';
 import { UserComponent } from './simple-state-management/components/user.component';
 import { ElementsComponent } from './elements/elements.component';
@@ -58,6 +60,16 @@ const routes: Routes = [
         path: 'form',
         component: FormComponent,
         data: { title: 'mds.examples.menu.form' }
+      },
+      {
+        path: 'provider-form',
+        component: ProviderFormComponent,
+        data: { title: 'mds.providers.title' }
+      },
+      {
+        path: 'user-form',
+        component: UserFormComponent,
+        data: { title: 'mds.providers.title' }
       },
       {
         path: 'notifications',

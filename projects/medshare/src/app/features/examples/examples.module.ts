@@ -10,25 +10,40 @@ import { SharedModule } from '../../shared/shared.module';
 import { environment } from '../../../environments/environment';
 
 import { FEATURE_NAME, reducers } from './examples.state';
+
 import { ExamplesRoutingModule } from './examples-routing.module';
 import { ExamplesComponent } from './examples/examples.component';
+import { ExamplesEffects } from './examples.effects';
+
 import { TodosContainerComponent } from './todos/components/todos-container.component';
 import { TodosEffects } from './todos/todos.effects';
+
 import { StockMarketContainerComponent } from './stock-market/components/stock-market-container.component';
 import { StockMarketEffects } from './stock-market/stock-market.effects';
 import { StockMarketService } from './stock-market/stock-market.service';
+
 import { ParentComponent } from './theming/parent/parent.component';
 import { ChildComponent } from './theming/child/child.component';
+
 import { CrudComponent } from './crud/components/crud.component';
+
 import { BooksEffects } from './crud/books.effects';
+
 import { FormComponent } from './form/components/form.component';
-import { ProviderFormComponent } from './provider-form/components/provider-form.component';
 import { FormEffects } from './form/form.effects';
+
+import { ProviderFormComponent } from './provider-form/components/provider-form.component';
+import { ProviderFormEffects } from './provider-form/provider-form.effects';
+
+import { UserFormComponent } from './user-form/components/user-form.component';
+import { UserFormEffects } from './user-form/user-form.effects';
+
 import { AuthenticatedComponent } from './authenticated/authenticated.component';
 import { NotificationsComponent } from './notifications/components/notifications.component';
-import { ExamplesEffects } from './examples.effects';
+
 import { UserComponent } from './simple-state-management/components/user.component';
 import { UserService } from './simple-state-management/user.service';
+
 import { ElementsComponent } from './elements/elements.component';
 
 export function httpLoaderFactory(http: HttpClient) {
@@ -41,6 +56,21 @@ export function httpLoaderFactory(http: HttpClient) {
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  declarations: [
+    ExamplesComponent,
+    TodosContainerComponent,
+    StockMarketContainerComponent,
+    ParentComponent,
+    ChildComponent,
+    AuthenticatedComponent,
+    CrudComponent,
+    FormComponent,
+    ProviderFormComponent,
+    UserFormComponent,
+    NotificationsComponent,
+    UserComponent,
+    ElementsComponent
+  ],
   imports: [
     LazyElementsModule,
     SharedModule,
@@ -59,22 +89,10 @@ export function httpLoaderFactory(http: HttpClient) {
       TodosEffects,
       StockMarketEffects,
       BooksEffects,
-      FormEffects
+      FormEffects,
+      ProviderFormEffects,
+      UserFormEffects
     ])
-  ],
-  declarations: [
-    ExamplesComponent,
-    TodosContainerComponent,
-    StockMarketContainerComponent,
-    ParentComponent,
-    ChildComponent,
-    AuthenticatedComponent,
-    CrudComponent,
-    FormComponent,
-    ProviderFormComponent,
-    NotificationsComponent,
-    UserComponent,
-    ElementsComponent
   ],
   providers: [StockMarketService, UserService]
 })
