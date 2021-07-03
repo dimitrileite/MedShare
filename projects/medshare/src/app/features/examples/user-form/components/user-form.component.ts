@@ -88,15 +88,15 @@ export class UserFormComponent implements OnInit {
         [Validators.required, Validators.pattern('^\\+(?:[0-9] ?){6,14}[0-9]$')]
       ],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(8)]],
+      newpassword: ['', [Validators.required, Validators.minLength(8)]],
       gender: ['', [Validators.required]],
-      confirm: ['', [Validators.required]],
+      confirmpassword: ['', [Validators.required]],
       acceptTerms: ['', [Validators.required]]
       /* autosave: false,
     rating: [0, Validators.required] */
     },
     {
-      validator: ConfirmValidator('password', 'confirm')
+      validator: ConfirmValidator('new-password', 'confirm-password')
     }
   );
 
@@ -157,7 +157,7 @@ export class UserFormComponent implements OnInit {
 
   async onEncryptWallet() {
     if (this.userForm.valid) {
-      const pwd = this.userForm.get('password').value;
+      const pwd = this.userForm.get('new-password').value;
       const keystore = await this._ethereumService.encryptPrivatekey(pwd);
       this.saveUser(keystore);
       /* this.router.navigate(['display']); */
@@ -176,7 +176,7 @@ export class UserFormComponent implements OnInit {
       birthdate: this.userForm.get('birthdate').value,
       phone: this.userForm.get('phone').value,
       email: this.userForm.get('email').value,
-      password: this.userForm.get('password').value,
+      password: this.userForm.get('new-password').value,
       gender: this.userForm.get('gender').value,
       keystore: keystore
     };

@@ -60,16 +60,16 @@
                 {
                   "type": "bundle",
                   "name": "styles",
-                  "baseline": "280kb",
-                  "maximumWarning": "50kb",
-                  "maximumError": "100kb"
+                  "baseline": "256kb",
+                  "maximumWarning": "100kb",
+                  "maximumError": "200kb"
                 },
                 {
                   "type": "bundle",
                   "name": "main",
                   "baseline": "1024kb",
-                  "maximumWarning": "100kb",
-                  "maximumError": "200kb"
+                  "maximumWarning": "300kb",
+                  "maximumError": "500kb"
                 },
                 {
                   "type": "anyComponentStyle",
