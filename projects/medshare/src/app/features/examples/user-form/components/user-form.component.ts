@@ -157,7 +157,7 @@ export class UserFormComponent implements OnInit {
 
   async onEncryptWallet() {
     if (this.userForm.valid) {
-      const pwd = this.userForm.get('new-password').value;
+      const pwd = this.userForm.get('newpassword').value;
       const keystore = await this._ethereumService.encryptPrivatekey(pwd);
       this.saveUser(keystore);
       /* this.router.navigate(['display']); */
