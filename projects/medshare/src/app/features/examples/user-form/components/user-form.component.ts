@@ -176,7 +176,7 @@ export class UserFormComponent implements OnInit {
       birthdate: this.userForm.get('birthdate').value,
       phone: this.userForm.get('phone').value,
       email: this.userForm.get('email').value,
-      password: this.userForm.get('new-password').value,
+      password: this.userForm.get('newpassword').value,
       gender: this.userForm.get('gender').value,
       keystore: keystore
     };
