@@ -96,7 +96,7 @@ export class UserFormComponent implements OnInit {
     rating: [0, Validators.required] */
     },
     {
-      validator: ConfirmValidator('new-password', 'confirm-password')
+      validator: ConfirmValidator('newpassword', 'confirmpassword')
     }
   );
 
