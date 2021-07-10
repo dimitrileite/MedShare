@@ -1,0 +1,19 @@
+{
+  "mds.admin.menu.auth": "Auth.",
+  "mds.admin.menu.provider-form": "Formular",
+  "mds.admin.menu.stocks": "Börse",
+  "mds.admin.menu.user-form": "Formular",
+  "mds.admin.providers.form.title": "",
+  "mds.admin.stocks.description": "",
+  "mds.admin.stocks.error1": "Aktienbestand",
+  "mds.admin.stocks.error2": "nicht gefunden",
+  "mds.admin.stocks.symbol": "Aktiensymbol",
+  "mds.admin.stocks.text1": "Das Börsenbeispiel zeigt, wie",
+  "mds.admin.stocks.text2": "Aufrufe mithilfe eines",
+  "mds.admin.stocks.text3": "Modules implementiert werden.",
+  "mds.admin.stocks.text4": "Durch die Aktualisierung der Symbolabfrage mit einem anderen Symbol wird eine Aktion ausgelöst, die den Status mit Ladekennzeichen (Reduzierer) aktualisiert und den Effekt zum Abrufen des ausgewählten Aktienbestands auslöst.",
+  "mds.admin.stocks.text5": "Aktionen werden entprellt und jede nachfolgende Anfrage wird die Vorherige löschen",
+  "mds.admin.stocks.text6": "Nach Abschluss des Aufrufs werden Erfolgs- oder Fehleraktionen ausgegeben. Das Lade-Spinner wird entfernt und die Aktieninfo oder die Fehlermeldung wird angezeigt.",
+  "mds.admin.stocks.title": "Börse",
+  "mds.admin.title": "Beispiele"
+}

@@ -3,18 +3,18 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AuthGuardService } from '../../core/core.module';
 
-import { ExamplesComponent } from './examples/examples.component';
-import { ParentComponent } from './theming/parent/parent.component';
 import { AuthenticatedComponent } from './authenticated/authenticated.component';
-import { TodosContainerComponent } from './todos/components/todos-container.component';
-import { StockMarketContainerComponent } from './stock-market/components/stock-market-container.component';
 import { CrudComponent } from './crud/components/crud.component';
-import { FormComponent } from './form/components/form.component';
-import { ProviderFormComponent } from './provider-form/components/provider-form.component';
-import { UserFormComponent } from './user-form/components/user-form.component';
-import { NotificationsComponent } from './notifications/components/notifications.component';
-import { UserComponent } from './simple-state-management/components/user.component';
 import { ElementsComponent } from './elements/elements.component';
+import { ExamplesComponent } from './examples/examples.component';
+import { FormComponent } from './form/components/form.component';
+import { NotificationsComponent } from './notifications/components/notifications.component';
+import { ParentComponent } from './theming/parent/parent.component';
+import { ProviderFormComponent } from './provider-form/components/provider-form.component';
+import { StockMarketContainerComponent } from './stock-market/components/stock-market-container.component';
+import { TodosContainerComponent } from './todos/components/todos-container.component';
+import { UserComponent } from './simple-state-management/components/user.component';
+import { UserFormComponent } from './user-form/components/user-form.component';
 
 const routes: Routes = [
   {
@@ -23,7 +23,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'todos',
+        redirectTo: 'stock-market',
         pathMatch: 'full'
       },
       {

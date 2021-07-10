@@ -25,6 +25,7 @@
 @import './app/features/examples/theming/parent/parent.component.scss-theme';
 @import './app/features/examples/theming/child/child.component.scss-theme';
 @import './app/features/examples/examples/examples.component.scss-theme';
+@import './app/admin/admin/admin.component.scss-theme';
 
 @mixin custom-components-theme($theme) {
   @include mds-styles-reset-theme($theme);
@@ -37,6 +38,7 @@
   @include mds-parent-component-theme($theme);
   @include mds-child-component-theme($theme);
   @include mds-examples-component-theme($theme);
+  @include mds-admin-component-theme($theme);
 }
 
 .default-theme {

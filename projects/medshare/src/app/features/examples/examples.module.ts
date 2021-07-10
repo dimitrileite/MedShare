@@ -58,24 +58,27 @@ export function httpLoaderFactory(http: HttpClient) {
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [
     ExamplesComponent,
-    TodosContainerComponent,
-    StockMarketContainerComponent,
-    ParentComponent,
-    ChildComponent,
+
     AuthenticatedComponent,
+    ChildComponent,
     CrudComponent,
+    ElementsComponent,
     FormComponent,
-    ProviderFormComponent,
-    UserFormComponent,
     NotificationsComponent,
+    ParentComponent,
+    ProviderFormComponent,
+    StockMarketContainerComponent,
+    TodosContainerComponent,
     UserComponent,
-    ElementsComponent
+    UserFormComponent
   ],
   imports: [
     LazyElementsModule,
     SharedModule,
     ExamplesRoutingModule,
+
     StoreModule.forFeature(FEATURE_NAME, reducers),
+
     TranslateModule.forChild({
       loader: {
         provide: TranslateLoader,
@@ -84,18 +87,17 @@ export function httpLoaderFactory(http: HttpClient) {
       },
       isolate: true
     }),
+
     EffectsModule.forFeature([
-      ExamplesEffects,
-      TodosEffects,
-      StockMarketEffects,
       BooksEffects,
+      ExamplesEffects,
       FormEffects,
       ProviderFormEffects,
+      StockMarketEffects,
+      TodosEffects,
       UserFormEffects
     ])
   ],
   providers: [StockMarketService, UserService]
 })
-export class ExamplesModule {
-  constructor() {}
-}
+export class ExamplesModule {}

@@ -1,0 +1,25 @@
+<nav mat-tab-nav-bar class="d-none d-sm-flex">
+  <a mat-tab-link
+     *ngFor="let t of tabs"
+     [routerLink]="t.link"
+     routerLinkActive #rla="routerLinkActive"
+     [active]="rla.isActive"
+     [disabled]="t.auth && !(isAuthenticated$ | async)">
+    {{t.label | translate}}
+  </a>
+</nav>
+
+<nav class="nav-responsive d-sm-none d-flex justify-content-center">
+    <mat-select [placeholder]="'mds.admin.title' | translate" [value]="'todos'">
+      <mat-option *ngFor="let t of tabs"
+        [value]="t"
+        [routerLink]="t.link"
+        [disabled]="t.auth && !(isAuthenticated$ | async)">
+          {{t.label | translate}}          
+      </mat-option>
+    </mat-select>
+</nav>
+
+<div [@routeAnimations]="o.isActivated && o.activatedRoute.routeConfig.path">
+  <router-outlet #o="outlet"></router-outlet>
+</div>

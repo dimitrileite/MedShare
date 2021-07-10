@@ -1,0 +1,19 @@
+{
+  "mds.admin.menu.auth": "Auth",
+  "mds.admin.menu.provider-form": "Provider Form",
+  "mds.admin.menu.stocks": "Stocks",
+  "mds.admin.menu.user-form": "User Form",
+  "mds.admin.providers.form.title": "Providers",
+  "mds.admin.stocks.description": "Please provide some valid currency symbol like:",
+  "mds.admin.stocks.error1": "Stock",
+  "mds.admin.stocks.error2": "not found",
+  "mds.admin.stocks.symbol": "Stock symbol",
+  "mds.admin.stocks.text1": "Stock market example shows how to implement",
+  "mds.admin.stocks.text2": "requests using",
+  "mds.admin.stocks.text3": "module.",
+  "mds.admin.stocks.text4": "Updating symbol query with different symbol will emit action which updates state with loading flag (reducer) and triggers effect for retrieving of selected stock.",
+  "mds.admin.stocks.text5": "Actions are debounced and every subsequent request will cancel previous one using",
+  "mds.admin.stocks.text6": "Success or error actions are emitted on request completion. Loading spinner is removed and stock info or error message is displayed.",
+  "mds.admin.stocks.title": "Stock market",
+  "mds.admin.title": "Admin"
+}

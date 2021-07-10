@@ -1,0 +1,19 @@
+{
+  "mds.admin.menu.auth": "Auth",
+  "mds.admin.menu.provider-form": "Formulário de Especialista",
+  "mds.admin.menu.stocks": "Stocks",
+  "mds.admin.menu.user-form": "Formulário de Usuário",
+  "mds.admin.providers.form.title": "Especialidades",
+  "mds.admin.stocks.description": "Por favor forneça o símbolo de uma moeda válida como:",
+  "mds.admin.stocks.error1": "Item",
+  "mds.admin.stocks.error2": "não encontrado",
+  "mds.admin.stocks.symbol": "Simbolo",
+  "mds.admin.stocks.text1": "O examplo de mercado de ações mostra como implementar",
+  "mds.admin.stocks.text2": "requests usando",
+  "mds.admin.stocks.text3": "module.",
+  "mds.admin.stocks.text4": "A atualização da consulta de símbolo com símbolo diferente emitirá uma ação que atualiza o estado com o sinalizador de carregamento (handler) e aciona a Action para recuperar o estoque selecionado.",
+  "mds.admin.stocks.text5": "As Actions são executadas e a cada request subsequente vai ser cancelada a anterior usando",
+  "mds.admin.stocks.text6": "Actions com sucesso ou erro são emitidas no final da request. O Loading spinner é removido e a informação do item da bolsa ou mensagem de erro é mostrada.",
+  "mds.admin.stocks.title": "Mercado de Ações",
+  "mds.admin.title": "Admin"
+}

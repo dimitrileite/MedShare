@@ -1,0 +1,19 @@
+{
+  "mds.admin.menu.auth": "Autenticación",
+  "mds.admin.menu.provider-form": "Formar",
+  "mds.admin.menu.stocks": "Acciones",
+  "mds.admin.menu.user-form": "Formar",
+  "mds.admin.providers.form.title": "",
+  "mds.admin.stocks.description": "",
+  "mds.admin.stocks.error1": "Acción",
+  "mds.admin.stocks.error2": "no encontrada",
+  "mds.admin.stocks.symbol": "Símbolo de la acción",
+  "mds.admin.stocks.text1": "El ejemplo del mercado de valores muestra cómo implementar",
+  "mds.admin.stocks.text2": "para peticiones utilizando el módulo",
+  "mds.admin.stocks.text3": ".",
+  "mds.admin.stocks.text4": "Cambiar por un símbolo diferente emitirá una acción que actualiza el estado con el indicador de carga (reductor) y desencadena el efecto para recuperar la acción seleccionada.",
+  "mds.admin.stocks.text5": "Las acciones son rechazadas y cada solicitud posterior cancelará la anterior usando",
+  "mds.admin.stocks.text6": "Las acciones exitosas o erróneas se emiten al completar la solicitud. Se quitó la ruedecilla de carga y se muestra información de la acción o mensaje de error.",
+  "mds.admin.stocks.title": "Mercado de valores",
+  "mds.admin.title": "Ejemplos"
+}
