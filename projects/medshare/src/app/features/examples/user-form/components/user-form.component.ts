@@ -1,7 +1,12 @@
 import { UserFormService } from './../user-form.service';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import {
+  Validators,
+  FormBuilder,
+  FormGroup,
+  AbstractControl
+} from '@angular/forms';
 import { StepperOrientation } from '@angular/material/stepper';
 import { Store, select } from '@ngrx/store';
 import { TranslateService } from '@ngx-translate/core';
@@ -22,6 +27,7 @@ import {
 } from '../user-form.actions';
 import { selectUserFormState } from '../user-form.selectors';
 import { UserForm } from '../user-form.model';
+import { BigNumber } from 'ethers';
 
 export function ConfirmValidator(
   controlName: string,
@@ -50,11 +56,22 @@ export function ConfirmValidator(
 export class UserFormComponent implements OnInit {
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
 
+  decode = (str: string): string =>
+    Buffer.from(str, 'base64').toString('binary');
+  encode = (str: string): string =>
+    Buffer.from(str, 'binary').toString('base64');
+
   mnemonic: string[];
   address: string = '';
-  balance: string;
+  balance: BigNumber | string;
   testWords: { word: string; index: number }[];
   submitted: boolean = false;
+
+  private sameWord =
+    (index: number) =>
+    ({ value }: AbstractControl) => {
+      return value !== this.testWords[index].word ? { sameWord: value } : null;
+    };
 
   /* userFormValueChanges$: Observable<UserForm>; */
   stepperOrientation$: Observable<StepperOrientation>;
@@ -71,39 +88,48 @@ export class UserFormComponent implements OnInit {
     // These "spots" create structures that look like eyes, mouths and noses.
   };
 
-  userForm = this.fb.group(
+  userForm = this._fb.group({
+    firstname: ['', [Validators.required, Validators.minLength(2)]],
+    lastname: [
+      '',
+      [
+        Validators.required,
+        Validators.minLength(2),
+        Validators.pattern('^[a-zA-Z]*$')
+      ]
+    ],
+    birthdate: ['', [Validators.required]],
+    phone: [
+      '',
+      [Validators.required, Validators.pattern('^\\+(?:[0-9] ?){6,14}[0-9]$')]
+    ],
+    email: ['', [Validators.required, Validators.email]],
+    gender: ['', [Validators.required]]
+    /* autosave: false,
+  rating: [0, Validators.required] */
+  });
+
+  passwordForm = this._fb.group(
     {
-      firstname: ['', [Validators.required, Validators.minLength(2)]],
-      lastname: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(2),
-          Validators.pattern('^[a-zA-Z]*$')
-        ]
-      ],
-      birthdate: ['', [Validators.required]],
-      phone: [
-        '',
-        [Validators.required, Validators.pattern('^\\+(?:[0-9] ?){6,14}[0-9]$')]
-      ],
-      email: ['', [Validators.required, Validators.email]],
-      newpassword: ['', [Validators.required, Validators.minLength(8)]],
-      gender: ['', [Validators.required]],
-      confirmpassword: ['', [Validators.required]],
+      password: ['', [Validators.required, Validators.minLength(8)]],
+      confirm: ['', [Validators.required]],
       acceptTerms: ['', [Validators.required]]
-      /* autosave: false,
-    rating: [0, Validators.required] */
     },
     {
-      validator: ConfirmValidator('newpassword', 'confirmpassword')
+      validator: ConfirmValidator('password', 'confirm')
     }
   );
 
-  confirmForm = this.fb.group({});
+  testForm = this._fb.group({
+    0: ['', [Validators.required]],
+    1: ['', [Validators.required]],
+    2: ['', [Validators.required]]
+  });
+
+  confirmForm = this._fb.group({});
 
   constructor(
-    private fb: FormBuilder,
+    private _fb: FormBuilder,
     private store: Store,
     private _ethereumService: EthereumService,
     private translate: TranslateService,
@@ -127,7 +153,8 @@ export class UserFormComponent implements OnInit {
     this._ethereumService.createWallet();
     this.mnemonic = this._ethereumService.getRandomMnemonic();
     this.address = this._ethereumService.getWalletAddress();
-    this.balance = this._ethereumService.getWalletBalance(true).toString();
+    this.balance = this._ethereumService.getWalletBalance(true);
+    this.createTestWords(3);
   }
 
   createTestWords(amount: number) {
@@ -156,13 +183,14 @@ export class UserFormComponent implements OnInit {
   }
 
   async onEncryptWallet() {
-    if (this.userForm.valid) {
-      const pwd = this.userForm.get('newpassword').value;
-      const keystore = await this._ethereumService.encryptPrivatekey(pwd);
+    if (this.passwordForm.valid) {
+      const pwd = this.passwordForm.get('password').value;
+      await this._ethereumService.encryptPrivatekey(pwd);
+      const keystore = localStorage.getItem('keystore');
       this.saveUser(keystore);
       /* this.router.navigate(['display']); */
       this.notificationService.info(
-        this.userForm.value.acceptTerms
+        this.passwordForm.value.acceptTerms
           ? this.translate.instant('mds.examples.users.form.walletcreated')
           : this.translate.instant('mds.examples.users.form.shouldacceptterms')
       );
@@ -176,9 +204,9 @@ export class UserFormComponent implements OnInit {
       birthdate: this.userForm.get('birthdate').value,
       phone: this.userForm.get('phone').value,
       email: this.userForm.get('email').value,
-      password: this.userForm.get('newpassword').value,
+      password: this.encode(this.passwordForm.get('password').value),
       gender: this.userForm.get('gender').value,
-      keystore: keystore
+      keystore: this.encode(keystore)
     };
     this._userFormService.create(data).subscribe(
       (response) => {

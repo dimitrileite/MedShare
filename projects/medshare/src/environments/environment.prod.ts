@@ -5,6 +5,7 @@ export const environment = {
   envName: 'PROD',
   production: true,
   test: false,
+  PROVIDER_URL: 'https://rinkeby.infura.io/v3/56c131f094834fe6866a48256734f0ec',
   API_URL: 'https://medshare-server.herokuapp.com',
   i18nPrefix: '',
   versions: {

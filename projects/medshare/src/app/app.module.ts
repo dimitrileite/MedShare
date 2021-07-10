@@ -7,11 +7,14 @@ import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app/app.component';
 
+import { ChartistModule } from 'ng-chartist';
+
 @NgModule({
   imports: [
     // angular
     BrowserAnimationsModule,
     BrowserModule,
+    ChartistModule,
 
     // core
     CoreModule,

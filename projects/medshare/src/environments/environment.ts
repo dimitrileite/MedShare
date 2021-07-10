@@ -9,6 +9,7 @@ export const environment = {
   appName: 'MedShare',
   envName: 'DEV',
   production: false,
+  PROVIDER_URL: 'https://rinkeby.infura.io/v3/56c131f094834fe6866a48256734f0ec',
   API_URL: 'http://localhost:3000',
   /* API_URL: 'https://medshare-server.herokuapp.com', */
   test: false,
