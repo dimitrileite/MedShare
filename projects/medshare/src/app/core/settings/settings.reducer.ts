@@ -17,6 +17,7 @@ import { Action, createReducer, on } from '@ngrx/store';
 export const initialState: SettingsState = {
   autoNightMode: false,
   currency: 'usd',
+  address: '0x00F50C0c6407eDF5b146FAdE0E8821dcf8cd43Bc',
   elementsAnimations: true,
   hour: 0,
   language: 'en',
@@ -24,7 +25,7 @@ export const initialState: SettingsState = {
   pageAnimations: true,
   pageAnimationsDisabled: false,
   stickyHeader: true,
-  theme: 'DEFAULT-THEME',
+  theme: 'DEFAULT-THEME'
 };
 
 const reducer = createReducer(

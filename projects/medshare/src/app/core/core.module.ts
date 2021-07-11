@@ -50,6 +50,7 @@ import { SettingsEffects } from './settings/settings.effects';
 import {
   selectSettingsLanguage,
   selectSettingsCurrency,
+  selectSettingsAddress,
   selectEffectiveTheme,
   selectSettingsStickyHeader
 } from './settings/settings.selectors';
@@ -71,6 +72,7 @@ export {
   selectRouterState,
   selectSettingsLanguage,
   selectSettingsCurrency,
+  selectSettingsAddress,
   selectSettingsStickyHeader
 };
 

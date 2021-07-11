@@ -1,20 +1,21 @@
-import browser from 'browser-detect';
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import browser from 'browser-detect';
 
 import { environment as env } from '../../environments/environment';
 
 import {
   authLogin,
   authLogout,
-  routeAnimations,
   LocalStorageService,
+  selectEffectiveTheme,
   selectIsAuthenticated,
-  selectSettingsStickyHeader,
-  selectSettingsLanguage,
+  selectSettingsAddress,
   selectSettingsCurrency,
-  selectEffectiveTheme
+  selectSettingsLanguage,
+  selectSettingsStickyHeader,
+  routeAnimations
 } from '../core/core.module';
 import {
   actionSettingsChangeAnimationsPageDisabled,
@@ -35,11 +36,13 @@ export class AppComponent implements OnInit {
   version = env.versions.app;
   year = new Date().getFullYear();
   logo = 'assets/images/logo.png';
-  languages = ['en', 'de', 'sk', 'fr', 'es', 'pt-br', 'zh-cn', 'he'];
+  languages = ['en', 'de', 'es', 'fr', 'he', 'pt-br', 'sk', 'zh-cn'];
   navigation = [
     { link: 'about', label: 'mds.menu.about' },
-    { link: 'provider-list', label: 'mds.menu.providers' },
-    { link: 'examples', label: 'mds.menu.examples' }
+    { link: 'features', label: 'mds.menu.features' },
+    { link: 'providers', label: 'mds.menu.providers' },
+    { link: 'examples', label: 'mds.menu.examples' },
+    { link: 'admin', label: 'mds.menu.admin' }
   ];
   navigationSideMenu = [
     ...this.navigation,
@@ -51,19 +54,9 @@ export class AppComponent implements OnInit {
   language$: Observable<string>;
   currency$: Observable<string>;
   theme$: Observable<string>;
+  address$: Observable<string>;
 
-  address: string = '';
-  identiconOptions: IdenticonOptions = {
-    // All options are optional
-    seed: this.address, // seed used to generate icon data, default: random
-    color: '', // to manually specify the icon color, default: random
-    bgcolor: '', // choose a different background color, default: random
-    size: 8, // width/height of the icon in blocks, default: 8
-    scale: 4, // width/height of each block in pixels, default: 4
-    spotcolor: '' // each pixel has a 13% chance of being of a third color,
-    // default: random. Set to -1 to disable it.
-    // These "spots" create structures that look like eyes, mouths and noses.
-  };
+  identiconOptions: IdenticonOptions;
 
   constructor(
     private store: Store,
@@ -88,7 +81,20 @@ export class AppComponent implements OnInit {
     this.stickyHeader$ = this.store.pipe(select(selectSettingsStickyHeader));
     this.language$ = this.store.pipe(select(selectSettingsLanguage));
     this.currency$ = this.store.pipe(select(selectSettingsCurrency));
+    this.address$ = this.store.pipe(select(selectSettingsAddress));
     this.theme$ = this.store.pipe(select(selectEffectiveTheme));
+
+    this.identiconOptions = {
+      // All options are optional
+      seed: this.address$.toString(), // seed used to generate icon data, default: random
+      color: '', // to manually specify the icon color, default: random
+      bgcolor: '', // choose a different background color, default: random
+      size: 8, // width/height of the icon in blocks, default: 8
+      scale: 4, // width/height of each block in pixels, default: 4
+      spotcolor: '' // each pixel has a 13% chance of being of a third color,
+      // default: random. Set to -1 to disable it.
+      // These "spots" create structures that look like eyes, mouths and noses.
+    };
   }
 
   onLoginClick() {

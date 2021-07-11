@@ -13,17 +13,17 @@ const routes: Routes = [
       import('./features/about/about.module').then((m) => m.AboutModule)
   },
   {
-    path: 'provider-list',
+    path: 'features',
     loadChildren: () =>
-      import('./features/provider-list/provider-list.module').then(
-        (m) => m.ProviderListModule
+      import('./features/feature-list/feature-list.module').then(
+        (m) => m.FeatureListModule
       )
   },
   {
-    path: 'settings',
+    path: 'providers',
     loadChildren: () =>
-      import('./features/settings/settings.module').then(
-        (m) => m.SettingsModule
+      import('./providers/provider-list.module').then(
+        (m) => m.ProviderListModule
       )
   },
   {
@@ -37,6 +37,13 @@ const routes: Routes = [
     path: 'admin',
     loadChildren: () =>
       import('./admin/admin.module').then((m) => m.AdminModule)
+  },
+  {
+    path: 'settings',
+    loadChildren: () =>
+      import('./features/settings/settings.module').then(
+        (m) => m.SettingsModule
+      )
   },
   {
     path: '**',

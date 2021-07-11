@@ -1,0 +1,19 @@
+{
+  "mds.providers.form.title": "",
+  "mds.providers.menu.auth": "Authentification",
+  "mds.providers.menu.provider-form": "Forme",
+  "mds.providers.menu.stocks": "Stocks",
+  "mds.providers.menu.user-form": "Forme",
+  "mds.providers.stocks.description": "",
+  "mds.providers.stocks.error1": "Symbole boursier",
+  "mds.providers.stocks.error2": "introuvable",
+  "mds.providers.stocks.symbol": "Symbole boursier",
+  "mds.providers.stocks.text1": "L'exemple boursier montre comment implémenter les requêtes",
+  "mds.providers.stocks.text2": "à l'aide du module",
+  "mds.providers.stocks.text3": ".",
+  "mds.providers.stocks.text4": "La mise à jour de la requête de symbole avec un symbole différent émet une action qui met à jour l'état avec l'indicateur de chargement (réducteur) et déclenche un effet pour la récupération du symbole boursier sélectionné.",
+  "mds.providers.stocks.text5": "Les actions sont temporisées et chaque demande ultérieure annulera la précédente en utilisant",
+  "mds.providers.stocks.text6": "Les actions de réussite ou d'erreur sont émises à la fin de la demande. Le chargement de spinner est supprimé et les informations stockées ou le message d'erreur s'affiche.",
+  "mds.providers.stocks.title": "Bourse",
+  "mds.providers.title": "Exemples"
+}

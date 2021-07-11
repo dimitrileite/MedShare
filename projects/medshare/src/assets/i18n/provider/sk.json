@@ -1,0 +1,19 @@
+{
+  "mds.providers.form.title": "",
+  "mds.providers.menu.auth": "Pre prihlásených",
+  "mds.providers.menu.provider-form": "Formulár",
+  "mds.providers.menu.stocks": "Akcie",
+  "mds.providers.menu.user-form": "Formulár",
+  "mds.providers.stocks.description": "",
+  "mds.providers.stocks.error1": "Akcie so symbolom",
+  "mds.providers.stocks.error2": "neboli nájdené",
+  "mds.providers.stocks.symbol": "Symbol akcie",
+  "mds.providers.stocks.text1": "Príklad akciového trhu ukazuje ako implementovať",
+  "mds.providers.stocks.text2": "volania pomocou",
+  "mds.providers.stocks.text3": "modulu.",
+  "mds.providers.stocks.text4": "Zmena symbolu v zadávacom poli bude viesť k vytvoreniu akcie, ktorá zmení stav aplikácie, nastaví nahrávanie (v reduceri) a spustí efekt na načítanie ceny zvolených akcií.",
+  "mds.providers.stocks.text5": "Každé nasledujúce volanie zruší to predošlé na zlepšenie výkonu pomocou",
+  "mds.providers.stocks.text6": "'Úspech' alebo 'chyba' akcie sú vytvorené na konci každého volania. Načítavací indikátor je odstránený a aplikácia zobrazí informácie o cene akcií alebo chybovú správu v prípade zlyhania volania.",
+  "mds.providers.stocks.title": "Akciový trh",
+  "mds.providers.title": "Príklady"
+}

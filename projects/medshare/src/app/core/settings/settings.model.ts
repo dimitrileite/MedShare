@@ -2,13 +2,14 @@ import { AppState } from '../core.module';
 
 export const NIGHT_MODE_THEME = 'BLACK-THEME';
 
-export type Language = 'en' |  'de' | 'es' | 'fr' | 'he' | 'pt-br' | 'sk' ;
+export type Language = 'en' | 'de' | 'es' | 'fr' | 'he' | 'pt-br' | 'sk';
 
 export type Currency = 'usd' | 'brl' | 'eur' | 'gbp';
 
 export interface SettingsState {
   autoNightMode: boolean;
   currency: string;
+  address: string;
   elementsAnimations: boolean;
   hour: number;
   language: string;

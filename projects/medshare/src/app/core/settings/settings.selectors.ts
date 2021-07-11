@@ -23,6 +23,11 @@ export const selectSettingsCurrency = createSelector(
   (state: SettingsState) => state.currency
 );
 
+export const selectSettingsAddress = createSelector(
+  selectSettings,
+  (state: SettingsState) => state.address
+);
+
 export const selectTheme = createSelector(
   selectSettings,
   (settings) => settings.theme

@@ -1,0 +1,19 @@
+{
+  "mds.providers.form.title": "",
+  "mds.providers.menu.auth": "鉴权",
+  "mds.providers.menu.provider-form": "表单",
+  "mds.providers.menu.stocks": "股票",
+  "mds.providers.menu.user-form": "表单",
+  "mds.providers.stocks.description": "",
+  "mds.providers.stocks.error1": "股票",
+  "mds.providers.stocks.error2": "没有找到",
+  "mds.providers.stocks.symbol": "股票代码",
+  "mds.providers.stocks.text1": "股票市场这个例子中，我们展示了如何实现",
+  "mds.providers.stocks.text2": "请求， 基于",
+  "mds.providers.stocks.text3": "模块。",
+  "mds.providers.stocks.text4": "更新股票代码会发射一个 Action，这个 Action 用于更新 state 中的加载标志 （reducer），然后会触发获取选定的图书的 Http 请求，也就是副作用 effects。",
+  "mds.providers.stocks.text5": "我们这里对 Action 做了抖动消除处理，之后的请求都会取消之前的",
+  "mds.providers.stocks.text6": "成功或错误的 Action 是在请求完成时发送的。加载的旋钮此时会被移除，股票或错误信息也会显示出来。",
+  "mds.providers.stocks.title": "股票市场",
+  "mds.providers.title": "例子"
+}
